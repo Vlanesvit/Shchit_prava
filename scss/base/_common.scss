@@ -1,0 +1,242 @@
+section {
+	position: relative;
+}
+
+// Text ========================================================================================================================================================
+h1 {
+	font-family: "Dihjauti", sans-serif;
+	font-weight: 400;
+	font-size: 55px;
+	// line-height: 66px;
+	line-height: 120%;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: #d9b369;
+}
+
+h2 {
+	font-family: "Dihjauti", sans-serif;
+	font-weight: 400;
+	font-size: 50px;
+	// line-height: 60px;
+	line-height: 120%;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+
+	span {
+		display: block;
+		font-size: 90px;
+		color: #d9b369;
+		padding-bottom: 10px;
+	}
+}
+
+h3 {
+	font-family: "Dihjauti", sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	// line-height: 39px;
+	line-height: 130%;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: "Dihjauti", sans-serif;
+	font-weight: 300;
+	font-size: 25px;
+	// line-height: 28px;
+	line-height: 110%;
+}
+
+h5 {
+	font-family: "Dihjauti", sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	// line-height: 26px;
+	line-height: 120%;
+	text-transform: uppercase;
+}
+
+p {
+	font-weight: 300;
+	font-size: 18px;
+	// line-height: 27px;
+	line-height: 150%;
+	letter-spacing: 0.03em;
+}
+
+// Button ========================================================================================================================================================
+.rs-btn {
+	cursor: pointer;
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	z-index: 10;
+	transition: all 0.3s ease 0s;
+
+	padding: 15px 40px;
+	font-weight: 400;
+	font-size: 16px;
+	letter-spacing: 0.03em;
+	border: 1px solid transparent;
+	background-color: transparent;
+	border-radius: 2px;
+	gap: 10px;
+
+	.border {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		fill: none;
+		stroke: #fff;
+		stroke-dasharray: 300 1000;
+		stroke-dashoffset: 300;
+		transition: 1s ease-in-out;
+	}
+
+	&._btn-primary {
+		color: #fff;
+		border: 1px solid var(--primary-color);
+		background-color: var(--primary-color);
+	}
+
+	&._btn-second {
+		color: #fff;
+		border: 1px solid var(--second-color);
+		background-color: var(--second-color);
+	}
+
+	&._btn-primary-border {
+		color: #fff;
+		border: 1px solid var(--primary-color);
+		background-color: transparent;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			.border {
+				stroke-dashoffset: -1000;
+			}
+		}
+	}
+}
+
+.rs-link {
+	cursor: pointer;
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	z-index: 10;
+	transition: all 0.3s ease 0s;
+	padding: 5px 0px;
+	font-weight: 700;
+	font-size: 14px;
+	letter-spacing: 0.03em;
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 1px;
+		width: 100%;
+		background: linear-gradient(90deg, #d9b369 calc(100% / 3), transparent 0 calc(200% / 3), #d9b369 0) var(--d, 0%)
+			100% /300% 3px no-repeat;
+		transition: 0.5s;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			--d: 100%;
+		}
+	}
+}
+
+.form {
+	width: 100%;
+
+	// .form__wrapper
+	&__wrapper {
+		position: relative;
+	}
+
+	// .form__block
+	&__block {
+	}
+
+	&__row {
+		@media (min-width: 991.98px) {
+			display: flex;
+
+			& > * {
+				&:not(:last-child) {
+					margin-right: 24px;
+				}
+			}
+		}
+	}
+
+	// .form__line
+	&__line {
+		width: 100%;
+		position: relative;
+
+		@media (max-width: 991.98px) {
+			margin-bottom: 10px;
+		}
+	}
+
+	// .form__button
+	&__button {
+		@media (max-width: 991.98px) {
+			margin-top: 20px;
+		}
+
+		.rs-btn {
+			height: 100%;
+			width: 100%;
+			white-space: nowrap;
+			border-radius: 0px;
+		}
+	}
+
+	&__agreement {
+		max-width: 726px;
+		margin-top: 20px;
+		font-weight: 400;
+		font-size: 14px;
+		// line-height: 20px;
+		line-height: 140%;
+		color: #ddd;
+
+		a {
+			text-decoration: underline;
+			text-decoration-skip-ink: none;
+
+			@media (any-hover: hover) {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.rs-input {
+	outline: none;
+	width: 100%;
+	transition: 0.3s ease 0s;
+	transition-property: background-color, border-color;
+	padding: 16px 18px;
+	border: 1px solid #cba55b;
+	background-color: transparent;
+	color: #fff;
+
+	&::placeholder {
+		color: #fff;
+	}
+}

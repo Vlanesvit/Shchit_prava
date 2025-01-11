@@ -1,0 +1,131 @@
+.rs-text-block {
+	margin-top: 140px;
+
+	// .rs-text-block__container
+	&__container {
+	}
+
+	// .rs-text-block__wrapper
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		gap: 30px;
+	}
+
+	// .rs-text-block__img
+	&__img {
+		grid-column: 1/6;
+		position: relative;
+		margin-left: -23px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .rs-text-block__line
+	&__line {
+		position: absolute;
+		left: calc(100% + 32px);
+		top: 0;
+		height: 455px;
+		max-width: 1px;
+		width: auto;
+		border: 1px solid #d9b369;
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			border: 1px solid #d9b369;
+		}
+	}
+
+	// .rs-text-block__desc
+	&__desc {
+		grid-column: 7/13;
+		color: #fff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 111px 0px;
+	}
+
+	&__body {
+		& > p {
+			margin-top: 20px;
+		}
+
+		& > .rs-link {
+			margin-top: 30px;
+		}
+
+		p {
+			font-size: 20px;
+		}
+	}
+
+	// .rs-text-block__features
+	&__features {
+		margin-top: 30px;
+
+		ul {
+			display: flex;
+
+			li {
+				display: flex;
+				align-items: center;
+
+				&:not(:last-child) {
+					margin-right: 30px;
+				}
+			}
+		}
+
+		// .rs-text-block__features_circle
+		&_circle {
+			width: 83px;
+			aspect-ratio: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid #d9b369;
+			border-radius: 50%;
+			font-family: "Dihjauti", sans-serif;
+			font-weight: 400;
+			font-size: 20px;
+			// line-height: 28px;
+			line-height: 140%;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			position: relative;
+			margin-right: 10px;
+
+			&::after {
+				content: "";
+				position: absolute;
+				display: block;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				border-radius: inherit;
+				width: calc(100% - 7px);
+				height: calc(100% - 7px);
+				border: 1px solid #d9b369;
+			}
+		}
+
+		// .rs-text-block__features_desc
+		&_desc {
+		}
+	}
+}

@@ -1,0 +1,140 @@
+.rs-steps {
+	margin-top: 203px;
+	margin-bottom: 136px;
+
+	// .rs-steps__container
+	&__container {
+	}
+
+	// .rs-steps__wrapper
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+	}
+
+	// .rs-steps__title
+	&__title {
+		padding-top: 6px;
+
+		// .rs-steps__title_body
+		&_body {
+			position: sticky;
+			top: 220px;
+			left: 0;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+	}
+
+	// .rs-timer__desc_line
+	&__line {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: flex-end;
+		margin-top: 90px;
+
+		&-wrap {
+			height: 139px;
+			max-width: 1px;
+			width: auto;
+			border: 1px solid #d9b369;
+			position: relative;
+			margin-top: 15px;
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 16px;
+				height: 16px;
+				border-radius: 50%;
+				border: 1px solid #d9b369;
+			}
+		}
+
+		p {
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+			font-family: "Open Sans", sans-serif;
+			font-style: italic;
+			font-weight: 400;
+			color: #d9b369;
+		}
+	}
+
+	// .rs-steps__body
+	&__body {
+	}
+
+	// .rs-steps__list
+	&__list {
+		counter-reset: li;
+	}
+
+	// .rs-steps__item
+	&__item {
+		border: 1px solid #d9b369;
+		padding: 90px 40px 60px 40px;
+		backdrop-filter: blur(42.20000076293945px);
+		position: relative;
+
+		&:not(:last-child) {
+			margin-bottom: 93px;
+		}
+	}
+
+	&__num {
+		position: absolute;
+		left: 40px;
+		bottom: calc(100% - 65px);
+		width: 130px;
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #d9b369;
+		border-radius: 50%;
+		background-color: #fff;
+
+		&::before {
+			counter-increment: li;
+			content: counter(li, decimal-leading-zero);
+			font-family: "Dihjauti", sans-serif;
+			font-weight: 400;
+			font-size: 50px;
+			// line-height: 60px;
+			line-height: 120%;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: #d9b369;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			display: block;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: inherit;
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+			border: 1px solid #d9b369;
+		}
+	}
+
+	&__desc {
+		h4 {
+			font-family: "Inter", sans-serif;
+			color: #646464;
+		}
+	}
+}
