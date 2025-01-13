@@ -74,11 +74,11 @@
 
 .swiper-button-disabled {
 	opacity: 1 !important;
-	background-color: transparent !important;
+	border-color: #ababa7 !important;
 
 	svg {
 		path {
-			fill: #b7b3a8 !important;
+			fill: #ababa7 !important;
 		}
 	}
 }
@@ -86,9 +86,10 @@
 //========================================================================================================================================================
 .swiper-navigation {
 	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	margin-top: 30px;
+	align-items: center;
+	gap: 47px;
+
+	@include responsive-auto(gap, (47, 16), (1439.98, 1169.98, 991.98));
 }
 
 .swiper-buttons {
@@ -96,7 +97,7 @@
 
 	& > * {
 		&:not(:last-child) {
-			margin-right: 3px;
+			margin-right: 10px;
 		}
 	}
 }
@@ -106,30 +107,41 @@
 .swiper-button-prev {
 	position: relative;
 	top: 0%;
-	border-bottom: 1px solid #b7b3a8;
-	border-left: 1px solid #b7b3a8;
-	border-right: 1px solid #b7b3a8;
-	border-radius: 0 0 10px 10px;
-	width: 47px;
-	height: 47px;
-	margin-top: 0px;
+	border-radius: 50%;
+	border: 1px solid #d9b369;
+	width: 67px;
+	height: 67px;
+	margin-top: 30px;
 	z-index: 10;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
-	transition: 0.6s cubic-bezier(0.135, 0.9, 0.15, 1) 0s;
-	transition-property: background-color, border-color, opacity;
-	background-color: var(--primary-color);
+	transition: all 0.3s ease 0s;
+
+	@include responsive-auto(width, (67, 40), (1439.98, 1169.98, 991.98));
+	@include responsive-auto(height, (67, 40), (1439.98, 1169.98, 991.98));
 
 	svg {
-		width: 24px;
-		height: 24px;
+		width: unset;
+		height: unset;
 
 		path {
 			transition: fill 0.3s ease 0s;
-			fill: white;
+			fill: #d9b369;
+		}
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: #d9b369;
+
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
 		}
 	}
 }
@@ -153,6 +165,7 @@
 	transition: 0.3s opacity;
 	transform: translate3d(0, 0, 0);
 	z-index: 10;
+	margin-top: 30px;
 }
 
 .swiper-horizontal > .swiper-pagination-progressbar,
@@ -162,12 +175,12 @@
 	width: 100%;
 	height: 1px;
 	left: 0;
-	background-color: #b7b3a8;
+	background-color: #ababa7;
 	top: 0;
 }
 
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-	background: #2b2f34;
+	background: #0a4231;
 	position: absolute;
 	left: 0;
 	top: 0;

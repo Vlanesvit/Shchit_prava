@@ -170,7 +170,7 @@
 
 			<link rel="stylesheet" href="css/rs-banner.css">
 			<section class="rs-banner">
-				<div class="rs-banner__bg">
+				<div class="rs-banner__bg" data-aos="fade" data-aos-delay="0">
 					<picture>
 						<source srcset="./img/banner.jpg" media="(min-width: 991.98px)">
 						<img src="./img/banner_min.jpg" alt="">
@@ -183,51 +183,51 @@
 							<div class="rs-banner__desc">
 								<h1>Долги</h1>
 								<h2>мешают жизни?</h2>
-								<h3>Гарантированно освободим от долгов через процедуру банкротства</h3>
+								<h3>Гарантированно освободим <br> от долгов через процедуру <br> банкротства</h3>
 							</div>
 
 							<div class="rs-banner__features">
 								<ul>
-									<li>
+									<li data-aos="fade" data-aos-delay="100">
 										<div class="rs-banner__features_img">
 											<img src="./img/icon_banner_1.svg" alt="">
 										</div>
 										<div class="rs-banner__features_text">
-											<p>Ни одного проигранного дела за 9 лет</p>
+											<p>Ни одного проигранного дела за 9 лет</p>
 										</div>
 									</li>
-									<li>
+									<li data-aos="fade" data-aos-delay="200">
 										<div class="rs-banner__features_img">
 											<img src="./img/icon_banner_2.svg" alt="">
 										</div>
 										<div class="rs-banner__features_text">
-											<p>Подготовку документов и всю работу по делу
-												берём на себя</p>
+											<p>Подготовку документов и всю работу по делу
+												берём на себя</p>
 										</div>
 									</li>
-									<li>
+									<li data-aos="fade" data-aos-delay="300">
 										<div class="rs-banner__features_img">
 											<img src="./img/icon_banner_3.svg" alt="">
 										</div>
 										<div class="rs-banner__features_text">
-											<p>Беспроцентная рассрочка на срок проведения
+											<p>Беспроцентная рассрочка <br> на срок проведения
 												процедуры</p>
 										</div>
 									</li>
-									<li>
+									<li data-aos="fade" data-aos-delay="400">
 										<div class="rs-banner__features_img">
 											<img src="./img/icon_banner_4.svg" alt="">
 										</div>
 										<div class="rs-banner__features_text">
-											<p>Защита от коллекторов</p>
+											<p>Защита от коллекторов</p>
 										</div>
 									</li>
-									<li>
+									<li data-aos="fade" data-aos-delay="500">
 										<div class="rs-banner__features_img">
 											<img src="./img/icon_banner_5.svg" alt="">
 										</div>
 										<div class="rs-banner__features_text">
-											<p>Бесплатная консультация от экспертов</p>
+											<p>Бесплатная консультация от экспертов</p>
 										</div>
 									</li>
 								</ul>
@@ -236,7 +236,7 @@
 					</div>
 
 					<div class="rs-banner__request">
-						<div class="rs-banner__wrapper">
+						<div class="rs-banner__wrapper" data-aos="fade-up" data-aos-delay="100">
 							<div class="rs-banner__title">
 								<h5>Получите бесплатную консультацию</h5>
 							</div>
@@ -276,31 +276,36 @@
 
 			<link rel="stylesheet" href="css/rs-about.css">
 			<section class="rs-about">
-				<div class="rs-about__line"></div>
+				<div class="rs-about__line line line-horizontal line-primary" data-aos>
+					<div class="rs-about__line-wrap line-wrap"></div>
+				</div>
 				<div class="rs-about__container">
 					<div class="rs-about__wrapper">
-						<div class="rs-about__desc">
-							<h2>Мы поможем вам
-								в затруднительных ситуациях</h2>
-							<p>Избавим от кредитов, спишем долги, освободим от задолженностей</p>
+						<div class="rs-about__desc" data-aos="fade-up" data-aos-delay="100">
+							<h2>Мы поможем вам <br>
+								в затруднительных <br>
+								ситуациях</h2>
+							<p>Избавим от кредитов, спишем долги, освободим <br> от задолженностей</p>
 						</div>
 
-						<div class="rs-about__img">
+						<div class="rs-about__img" data-aos="fade-up" data-aos-delay="200">
 							<div class="video">
 								<video class="video-tag" poster="./img/video_preview_1.jpg">
 									<source src="img/video_1.mp4" type="video/mp4">
 								</video>
 
-								<button class="video-play">
-									<svg width="23" height="28" viewBox="0 0 23 28" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path d="M23 14L0 28L1.16089e-06 0L23 14Z" fill="#D9B369" />
-									</svg>
-								</button>
-							</div>
+								<div class="video-block">
+									<button class="video-play">
+										<svg width="23" height="28" viewBox="0 0 23 28" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M23 14L0 28L1.16089e-06 0L23 14Z" fill="#D9B369" />
+										</svg>
+									</button>
 
-							<div class="rs-about__img-label">
-								<p>Посмотрите видео о нашей компании</p>
+									<div class="video-label">
+										<p>Посмотрите видео о нашей компании</p>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -314,40 +319,51 @@
 				</div>
 				<div class="rs-services__content">
 					<div class="rs-services__container">
-						<div class="rs-services__wrapper">
-							<div class="rs-services__list">
-								<div class="rs-services__item">
-									<div class="rs-services__num"></div>
-									<div class="rs-services__desc">
-										<p>Задержки платежей по кредитам</p>
+
+						<div class="rs-services__slider swiper">
+							<div class="rs-services__swiper swiper-wrapper">
+								<div class="rs-services__slide swiper-slide">
+									<div class="rs-services__item" data-aos="fade" data-aos-delay="100">
+										<div class="rs-services__num"></div>
+										<div class="rs-services__desc">
+											<p>Задержки платежей по кредитам</p>
+										</div>
 									</div>
 								</div>
 
-								<div class="rs-services__item">
-									<div class="rs-services__num"></div>
-									<div class="rs-services__desc">
-										<p>Долги по оплате обучения</p>
+								<div class="rs-services__slide swiper-slide">
+									<div class="rs-services__item" data-aos="fade" data-aos-delay="200">
+										<div class="rs-services__num"></div>
+										<div class="rs-services__desc">
+											<p>Долги по оплате обучения</p>
+										</div>
 									</div>
 								</div>
 
-								<div class="rs-services__item">
-									<div class="rs-services__num"></div>
-									<div class="rs-services__desc">
-										<p>Невозможность оплаты лечения</p>
+								<div class="rs-services__slide swiper-slide">
+									<div class="rs-services__item" data-aos="fade" data-aos-delay="300">
+										<div class="rs-services__num"></div>
+										<div class="rs-services__desc">
+											<p>Невозможность оплаты лечения</p>
+										</div>
 									</div>
 								</div>
 
-								<div class="rs-services__item">
-									<div class="rs-services__num"></div>
-									<div class="rs-services__desc">
-										<p>Задолженность по выплатам займов</p>
+								<div class="rs-services__slide swiper-slide">
+									<div class="rs-services__item" data-aos="fade" data-aos-delay="400">
+										<div class="rs-services__num"></div>
+										<div class="rs-services__desc">
+											<p>Задолженность по выплатам займов</p>
+										</div>
 									</div>
 								</div>
 
-								<div class="rs-services__item">
-									<div class="rs-services__num"></div>
-									<div class="rs-services__desc">
-										<p>Сложное финансовое положение</p>
+								<div class="rs-services__slide swiper-slide">
+									<div class="rs-services__item" data-aos="fade" data-aos-delay="500">
+										<div class="rs-services__num"></div>
+										<div class="rs-services__desc">
+											<p>Сложное финансовое положение</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -360,16 +376,16 @@
 			<section class="rs-features">
 				<div class="rs-features__container">
 					<div class="rs-features__wrapper">
-						<div class="rs-features__line">
+						<div class="rs-features__line line line-vertical line-second" data-aos>
 							<p>Преимущества</p>
-							<div class="rs-features__line_wrap"></div>
+							<div class="rs-features__line-wrap line-wrap"></div>
 						</div>
 
-						<h2>Сделаем все, чтобы сотрудничество
-							с нами было комфортным и продуктивным</h2>
+						<h2>Сделаем все, чтобы сотрудничество <br>
+							с нами было комфортным <br> и продуктивным</h2>
 
 						<div class="rs-features__list">
-							<div class="rs-features__item">
+							<div class="rs-features__item" data-aos="fade" data-aos-delay="100">
 								<div class="rs-features__img">
 									<img src="./img/benefit_1.1.svg" alt="">
 								</div>
@@ -379,7 +395,7 @@
 								</div>
 							</div>
 
-							<div class="rs-features__item">
+							<div class="rs-features__item" data-aos="fade" data-aos-delay="200">
 								<div class="rs-features__img">
 									<img src="./img/benefit_1.2.svg" alt="">
 								</div>
@@ -390,7 +406,7 @@
 								</div>
 							</div>
 
-							<div class="rs-features__item">
+							<div class="rs-features__item" data-aos="fade" data-aos-delay="300">
 								<div class="rs-features__img">
 									<img src="./img/benefit_1.3.svg" alt="">
 								</div>
@@ -401,13 +417,13 @@
 								</div>
 							</div>
 
-							<div class="rs-features__item">
+							<div class="rs-features__item" data-aos="fade" data-aos-delay="400">
 								<div class="rs-features__img">
 									<img src="./img/benefit_1.4.svg" alt="">
 								</div>
 								<div class="rs-features__desc">
-									<h3>Соблюдаем сроки </h3>
-									<p>Независимо от оплаты соблюдаем регламент подготовки вашего дела для
+									<h3>Соблюдаем <br> сроки </h3>
+									<p>Независимо от оплаты соблюдаем регламент подготовки вашего дела <br> для
 										судопроизводства</p>
 								</div>
 							</div>
@@ -418,16 +434,18 @@
 
 			<link rel="stylesheet" href="css/rs-timer.css">
 			<section class="rs-timer">
-				<div class="rs-timer__line"></div>
+				<div class="rs-timer__line line line-horizontal line-primary" data-aos>
+					<div class="rs-timer__line-wrap line-wrap"></div>
+				</div>
 				<div class="rs-timer__container">
 					<div class="rs-timer__wrapper">
-						<div class="rs-timer__desc">
-							<div class="rs-timer__desc_line">
-								<div class="rs-timer__desc_line-wrap"></div>
+						<div class="rs-timer__desc" data-aos="fade-up" data-aos-delay="100">
+							<div class="rs-timer__desc_line line line-vertical line-primary" data-aos>
+								<div class="rs-timer__desc_line-wrap line-wrap"></div>
 								<p>Бесплатная консультация</p>
 							</div>
 							<div class="rs-timer__desc_body">
-								<h2>Запишитесь на бесплатную консультацию</h2>
+								<h2>Запишитесь <br> на бесплатную <br> консультацию</h2>
 								<p>На консультации профессиональный юрист с большим опытом оценит вашу финансовую
 									ситуацию,
 									разберет ваши основные переживания и ответит на ваши вопросы. В итоге вы не только
@@ -438,7 +456,16 @@
 							</div>
 						</div>
 
-						<div class="rs-timer__block">
+						<div class="rs-timer__block" data-aos="fade-up" data-aos-delay="200">
+							<div class="rs-timer__sale">
+								<div class="rs-timer__sale_percent">
+									-24%
+								</div>
+								<div class="rs-timer__sale_desc">
+									<p>На все услуги нашей компании до 1 февраля 2025 года</p>
+								</div>
+							</div>
+
 							<div class="rs-timer__timer">
 								<div class="timer" data-timer="01.02.2025 00:00">
 									<div class="timer__items">
@@ -450,14 +477,6 @@
 								</div>
 							</div>
 
-							<div class="rs-timer__sale">
-								<div class="rs-timer__sale_percent">
-									-24%
-								</div>
-								<div class="rs-timer__sale_desc">
-									<p>На все услуги нашей компании до 1 февраля 2025 года</p>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -468,12 +487,14 @@
 				style="background: radial-gradient(120.38% 62.24% at 22.81% 44.3%, #0a4231 0%, #05090e 100%);">
 				<div class="rs-text-block__container">
 					<div class="rs-text-block__wrapper">
-						<div class="rs-text-block__img">
+						<div class="rs-text-block__img" data-aos="fade-up" data-aos-delay="100">
 							<img src="./img/about_img_1.png" alt="">
-							<div class="rs-text-block__line"></div>
+							<div class="rs-text-block__line line line-vertical line-primary" data-aos>
+								<div class="rs-text-block__line-wrap line-wrap"></div>
+							</div>
 						</div>
 
-						<div class="rs-text-block__desc">
+						<div class="rs-text-block__desc" data-aos="fade-up" data-aos-delay="200">
 							<div class="rs-text-block__body">
 								<h2>Выполним свою работу раньше оплаты от вас</h2>
 								<p>Для наших клиентов мы предлагаем уникальные условия оплаты услуг. Оформите
@@ -518,27 +539,29 @@
 					<img src="./img/about_img_2.svg" alt="">
 				</div>
 				<div class="rs-picture-block__block">
-					<div class="rs-picture-block__line"></div>
+					<div class="rs-picture-block__line line line-horizontal line-primary" data-aos>
+						<div class="rs-picture-block__line-wrap line-wrap"></div>
+					</div>
 					<div class="rs-picture-block__content">
 						<div class="rs-picture-block__container">
 							<div class="rs-picture-block__wrapper">
-								<div class="rs-picture-block__item">
+								<div class="rs-picture-block__item" data-aos="fade-up" data-aos-delay="100">
 									<div class="rs-picture-block__desc">
-										<h2>Работаем исключительно по договору</h2>
+										<h2>Работаем исключительно <br> по договору</h2>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="rs-picture-block__img">
-						<img src="./img/benefit_2_img_1.jpg" alt="">
+						<img src="./img/benefit_2_img_1.jpg" alt="" data-aos="fade" data-aos-delay="100">
 					</div>
 				</div>
-				<div class="rs-picture-block__footer">
+				<div class="rs-picture-block__footer" data-aos="fade-up" data-aos-delay="300">
 					<div class="rs-picture-block__container">
 						<div class="rs-picture-block__footer_wrapper">
-							<h3>Заключаем договор, в котором зафиксированы гарантии и стоимость услуг. Помимо прочего,
-								в договоре прописаны следующие пункты:</h3>
+							<h3>Заключаем договор, в котором зафиксированы гарантии и стоимость <br> услуг. Помимо
+								прочего, в договоре прописаны следующие пункты:</h3>
 
 							<div class="rs-picture-block__footer_list">
 								<div class="rs-picture-block__footer_item">
@@ -585,9 +608,9 @@
 					<div class="rs-steps__wrapper">
 						<div class="rs-steps__title">
 							<div class="rs-steps__title_body">
-								<h2><span>4 шага</span> для списания всех долгов</h2>
-								<div class="rs-steps__line">
-									<div class="rs-steps__line-wrap"></div>
+								<h2><span class="big">4 шага</span> для списания <br> всех долгов</h2>
+								<div class="rs-steps__line line line-vertical line-primary" data-aos>
+									<div class="rs-steps__line-wrap line-wrap"></div>
 									<p>Как мы работаем</p>
 								</div>
 							</div>
@@ -595,28 +618,28 @@
 
 						<div class="rs-steps__body">
 							<div class="rs-steps__list">
-								<div class="rs-steps__item">
+								<div class="rs-steps__item" data-aos="fade-up" data-aos-delay="100">
 									<div class="rs-steps__num"></div>
 									<div class="rs-steps__desc">
 										<h4>Бесплатная консультация специалиста и проработка плана действий</h4>
 									</div>
 								</div>
 
-								<div class="rs-steps__item">
+								<div class="rs-steps__item" data-aos="fade-up" data-aos-delay="100">
 									<div class="rs-steps__num"></div>
 									<div class="rs-steps__desc">
 										<h4>Подготовка документов и подача в суд в течение 90 дней после обращения</h4>
 									</div>
 								</div>
 
-								<div class="rs-steps__item">
+								<div class="rs-steps__item" data-aos="fade-up" data-aos-delay="100">
 									<div class="rs-steps__num"></div>
 									<div class="rs-steps__desc">
 										<h4>Признание банкротом и ведение дела в Арбитражном суде</h4>
 									</div>
 								</div>
 
-								<div class="rs-steps__item">
+								<div class="rs-steps__item" data-aos="fade-up" data-aos-delay="100">
 									<div class="rs-steps__num"></div>
 									<div class="rs-steps__desc">
 										<h4>Завершение процедуры и списание всех долгов</h4>
@@ -633,15 +656,16 @@
 					<div class="rs-picture-block__content">
 						<div class="rs-picture-block__container">
 							<div class="rs-picture-block__wrapper">
-								<div class="rs-picture-block__item">
+								<div class="rs-picture-block__item" data-aos="fade-up" data-aos-delay="100">
 									<div class="rs-picture-block__desc">
-										<h2><span>С 2015 года</span> добились следующих результатов</h2>
+										<h2><span class="big">С 2015 года</span> добились следующих результатов</h2>
 									</div>
 								</div>
-								<div class="rs-picture-block__item">
+								<div class="rs-picture-block__item" data-aos="fade-up" data-aos-delay="300">
 									<div class="rs-picture-block__numbers">
-										<div class="rs-picture-block__numbers_line">
-											<div class="rs-picture-block__numbers_line-wrap"></div>
+										<div class="rs-picture-block__numbers_line line line-horizontal line-primary"
+											data-aos>
+											<div class="rs-picture-block__numbers_line-wrap line-wrap"></div>
 											<h4>Освобождено от долгов</h4>
 										</div>
 										<div class="rs-picture-block__numbers_title">
@@ -656,15 +680,15 @@
 						</div>
 					</div>
 					<div class="rs-picture-block__img">
-						<img src="./img/numbers_img.jpg" alt="">
+						<img src="./img/numbers_img.jpg" alt="" data-aos="fade" data-aos-delay="100">
 					</div>
 				</div>
-				<div class="rs-picture-block__footer">
+				<div class="rs-picture-block__footer" data-aos="fade-up" data-aos-delay="300">
 					<div class="rs-picture-block__container">
 						<div class="rs-picture-block__footer_wrapper">
-							<div class="rs-picture-block__footer_line">
+							<div class="rs-picture-block__footer_line line line-horizontal line-second" data-aos>
 								<p>О нас в цифрах</p>
-								<div class="rs-picture-block__footer_line-wrap"></div>
+								<div class="rs-picture-block__footer_line-wrap line-wrap"></div>
 							</div>
 							<div class="rs-picture-block__footer_list">
 								<div class="rs-picture-block__footer_item">
@@ -684,13 +708,13 @@
 								<div class="rs-picture-block__footer_item">
 									<div class="rs-picture-block__footer_desc">
 										<h5><span data-digits-counter="614">614</span>обЪектов</h5>
-										<p>Недвижимости сохранено для клиентов</p>
+										<p>Недвижимости сохранено для клиентов</p>
 									</div>
 								</div>
 								<div class="rs-picture-block__footer_item">
 									<div class="rs-picture-block__footer_desc">
 										<h5><span data-digits-counter="0">0</span>дел</h5>
-										<p>По банкротству проиграно за все время</p>
+										<p>По банкротству проиграно за все время</p>
 									</div>
 								</div>
 							</div>
@@ -703,13 +727,13 @@
 			<section class="rs-case">
 				<div class="rs-case__container">
 					<div class="rs-case__wrapper">
-						<div class="rs-case__desc_line">
-							<div class="rs-case__desc_line-wrap"></div>
+						<div class="rs-case__line line line-vertical line-primary" data-aos>
+							<div class="rs-case__line-wrap line-wrap"></div>
 							<p>Выигранные дела</p>
 						</div>
 
 						<div class="rs-case__block">
-							<div class="rs-case__text">
+							<div class="rs-case__text" data-aos="fade-up" data-aos-delay="100">
 								<div class="rs-case__text_slider swiper">
 									<div class="rs-case__text_swiper swiper-wrapper">
 										<div class="rs-case__text_slide swiper-slide">
@@ -718,7 +742,7 @@
 												<ul>
 													<li>Дата: 20 ноября 2023</li>
 													<li>Номер дела: А55-15706/2023</li>
-													<li>Сумма долга: 325 389 руб. 68 коп.</li>
+													<li>Сумма долга: 325 389 руб. 68 коп.</li>
 												</ul>
 											</div>
 										</div>
@@ -729,7 +753,7 @@
 												<ul>
 													<li>Дата: 24 мая 2022</li>
 													<li>Номер дела: А55-29062/2021</li>
-													<li>Сумма долга: 3 772 000 руб.</li>
+													<li>Сумма долга: 3 772 000 руб.</li>
 												</ul>
 											</div>
 										</div>
@@ -741,7 +765,7 @@
 												<ul>
 													<li>Дата: 22 мая 2022</li>
 													<li>Номер дела: А55-30055/2022</li>
-													<li>Сумма долга: 2 491 000 руб.</li>
+													<li>Сумма долга: 2 491 000 руб.</li>
 												</ul>
 											</div>
 										</div>
@@ -753,35 +777,32 @@
 												<ul>
 													<li>Дата: 16 января 2024</li>
 													<li>Номер дела: А55-20908/2023</li>
-													<li>Сумма долга: 2 479 690 руб. 93 коп.</li>
+													<li>Сумма долга: 2 479 690 руб. 93 коп.</li>
 												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<div class="rs-case__navigation swiper-navigation">
-									<div class="rs-case__buttons swiper-buttons">
-										<div class="rs-case__button-prev swiper-button-prev">
-											<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-												<path d="M0 3L5 0.113249V5.88675L0 3ZM22 3.5L4.5 3.5V2.5L22 2.5V3.5Z"
-													fill="#ABABA7" />
-											</svg>
-										</div>
-										<div class="rs-case__button-next swiper-button-next">
-											<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
-												xmlns="http://www.w3.org/2000/svg">
-												<path
-													d="M22 3L17 0.113249V5.88675L22 3ZM0 3.5L17.5 3.5V2.5L0 2.5L0 3.5Z"
-													fill="#D9B369" />
-											</svg>
-										</div>
+								<div class="rs-case__text_buttons swiper-buttons">
+									<div class="rs-case__text_button-prev swiper-button-prev">
+										<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M0 3L5 0.113249V5.88675L0 3ZM22 3.5L4.5 3.5V2.5L22 2.5V3.5Z"
+												fill="#ABABA7" />
+										</svg>
+									</div>
+									<div class="rs-case__text_button-next swiper-button-next">
+										<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M22 3L17 0.113249V5.88675L22 3ZM0 3.5L17.5 3.5V2.5L0 2.5L0 3.5Z"
+												fill="#D9B369" />
+										</svg>
 									</div>
 								</div>
 							</div>
 
-							<div class="rs-case__img">
+							<div class="rs-case__img" data-aos="fade" data-aos-delay="300">
 								<div class="rs-case__img_result">
 									<img src="./img/doc_stamp.svg" alt="">
 								</div>
@@ -825,171 +846,173 @@
 
 			<link rel="stylesheet" href="css/rs-reviews.css">
 			<section class="rs-reviews">
-				<div class="rs-reviews__container">
-					<div data-tabs class="rs-reviews__tabs tabs">
-						<div class="rs-reviews__head">
-							<h2>Отзывы наших клиентов</h2>
-							<nav data-tabs-titles class="tabs__navigation">
-								<button type="button" class="tabs__title rs-btn _btn-primary">Фотоотзывы</button>
-								<button type="button" class="tabs__title rs-btn _btn-second">Видеоотзывы</button>
-							</nav>
-						</div>
-						<div data-tabs-body class="tabs__content">
-							<div class="tabs__body">
-								<div class="rs-reviews__slider swiper">
-									<div class="rs-reviews__swiper swiper-wrapper">
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
+				<div class="rs-reviews__wrapper">
+					<div class="rs-reviews__container">
+						<div data-tabs data-tabs-animate="500" class="rs-reviews__tabs tabs">
+							<div class="rs-reviews__head" data-aos="fade-up" data-aos-delay="100">
+								<h2>Отзывы наших клиентов</h2>
+								<nav data-tabs-titles class="tabs__navigation">
+									<button type="button" class="tabs__title rs-btn _btn-second">Фотоотзывы</button>
+									<button type="button" class="tabs__title rs-btn _btn-second">Видеоотзывы</button>
+								</nav>
+							</div>
+							<div data-tabs-body class="tabs__content" data-aos="fade-up" data-aos-delay="200">
+								<div class="tabs__body">
+									<div class="rs-reviews__slider swiper">
+										<div class="rs-reviews__swiper swiper-wrapper">
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
 											</div>
 										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_img.jpg" data-fancybox="reviews-photo">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-									</div>
-									<div class="rs-reviews__navigation swiper-navigation">
-										<div class="rs-reviews__pagination swiper-pagination"></div>
-										<div class="rs-reviews__buttons swiper-buttons">
-											<div class="rs-reviews__button-prev swiper-button-prev">
-												<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M0 3L5 0.113249V5.88675L0 3ZM22 3.5L4.5 3.5V2.5L22 2.5V3.5Z"
-														fill="#ABABA7" />
-												</svg>
-											</div>
-											<div class="rs-reviews__button-next swiper-button-next">
-												<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M22 3L17 0.113249V5.88675L22 3ZM0 3.5L17.5 3.5V2.5L0 2.5L0 3.5Z"
-														fill="#0A4231" />
-												</svg>
+										<div class="rs-reviews__navigation swiper-navigation">
+											<div class="rs-reviews__pagination swiper-pagination"></div>
+											<div class="rs-reviews__buttons swiper-buttons">
+												<div class="rs-reviews__button-prev swiper-button-prev">
+													<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M0 3L5 0.113249V5.88675L0 3ZM22 3.5L4.5 3.5V2.5L22 2.5V3.5Z"
+															fill="#ABABA7" />
+													</svg>
+												</div>
+												<div class="rs-reviews__button-next swiper-button-next">
+													<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M22 3L17 0.113249V5.88675L22 3ZM0 3.5L17.5 3.5V2.5L0 2.5L0 3.5Z"
+															fill="#0A4231" />
+													</svg>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
 
-							<div class="tabs__body">
-								<div class="rs-reviews__slider swiper">
-									<div class="rs-reviews__swiper swiper-wrapper">
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_video-1.mp4" data-fancybox="reviews-video">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
+								<div class="tabs__body">
+									<div class="rs-reviews__slider swiper">
+										<div class="rs-reviews__swiper swiper-wrapper">
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_video-1.mp4" data-fancybox="reviews-video">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_video-2.mp4" data-fancybox="reviews-video">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_video-3.mp4" data-fancybox="reviews-video">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_video-4.mp4" data-fancybox="reviews-video">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
+											</div>
+											<div class="rs-reviews__slide swiper-slide">
+												<div class="rs-reviews__img">
+													<a href="./img/feedback_video-5.mp4" data-fancybox="reviews-video">
+														<img src="./img/feedback_img.jpg" alt="">
+													</a>
+												</div>
 											</div>
 										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_video-2.mp4" data-fancybox="reviews-video">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_video-3.mp4" data-fancybox="reviews-video">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_video-4.mp4" data-fancybox="reviews-video">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-										<div class="rs-reviews__slide swiper-slide">
-											<div class="rs-reviews__img">
-												<a href="./img/feedback_video-5.mp4" data-fancybox="reviews-video">
-													<img src="./img/feedback_img.jpg" alt="">
-												</a>
-											</div>
-										</div>
-									</div>
-									<div class="rs-reviews__navigation swiper-navigation">
-										<div class="rs-reviews__pagination swiper-pagination"></div>
-										<div class="rs-reviews__buttons swiper-buttons">
-											<div class="rs-reviews__button-prev swiper-button-prev">
-												<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M0 3L5 0.113249V5.88675L0 3ZM22 3.5L4.5 3.5V2.5L22 2.5V3.5Z"
-														fill="#ABABA7" />
-												</svg>
-											</div>
-											<div class="rs-reviews__button-next swiper-button-next">
-												<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
-													xmlns="http://www.w3.org/2000/svg">
-													<path
-														d="M22 3L17 0.113249V5.88675L22 3ZM0 3.5L17.5 3.5V2.5L0 2.5L0 3.5Z"
-														fill="#0A4231" />
-												</svg>
+										<div class="rs-reviews__navigation swiper-navigation">
+											<div class="rs-reviews__pagination swiper-pagination"></div>
+											<div class="rs-reviews__buttons swiper-buttons">
+												<div class="rs-reviews__button-prev swiper-button-prev">
+													<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M0 3L5 0.113249V5.88675L0 3ZM22 3.5L4.5 3.5V2.5L22 2.5V3.5Z"
+															fill="#ABABA7" />
+													</svg>
+												</div>
+												<div class="rs-reviews__button-next swiper-button-next">
+													<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
+														xmlns="http://www.w3.org/2000/svg">
+														<path
+															d="M22 3L17 0.113249V5.88675L22 3ZM0 3.5L17.5 3.5V2.5L0 2.5L0 3.5Z"
+															fill="#0A4231" />
+													</svg>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -997,13 +1020,15 @@
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="rs-reviews__logo">
-						<div class="rs-reviews__logo_line">
-							<div class="rs-reviews__logo_line-wrap"></div>
-							<p>Читайте отзывы о нашей работе</p>
-						</div>
+				<div class="rs-reviews__logo">
+					<div class="rs-reviews__logo_line line line-horizontal line-second" data-aos>
+						<div class="rs-reviews__logo_line-wrap line-wrap"></div>
+						<p>Читайте отзывы о нашей работе</p>
+					</div>
 
+					<div class="rs-reviews__container">
 						<div class="rs-reviews__logo_list">
 							<ul>
 								<li><a href="#"><img src="./img/ya.png" alt=""></a></li>
@@ -1022,16 +1047,17 @@
 			<section class="rs-video">
 				<div class="rs-video__container">
 					<div class="rs-video__wrapper">
-						<div class="rs-video__line">
-							<div class="rs-video__line-wrap"></div>
+						<div class="rs-video__line line line-vertical line-primary" data-aos>
+							<div class="rs-video__line-wrap line-wrap"></div>
 							<p>Экспертные видео</p>
 						</div>
 
 						<div class="rs-video__block">
 							<h2>Наши эксперты в СМИ</h2>
-							<p>Выступили на Россия 1 и рассказали обо всех нюансах и тонкостях процедуры банкротства</p>
+							<p>Выступили на Россия 1 и рассказали обо всех нюансах и тонкостях <br> процедуры
+								банкротства</p>
 
-							<div class="rs-video__video">
+							<div class="rs-video__video" data-aos="fade-up" data-aos-delay="100">
 								<div class="video">
 									<video class="video-tag" poster="./img/video_2_preview.jpg">
 										<source src="img/video_2.mp4" type="video/mp4">
@@ -1044,7 +1070,9 @@
 												<path d="M23 14L0 28L1.16089e-06 0L23 14Z" fill="#D9B369" />
 											</svg>
 										</button>
-										<p>Посмотрите наш выпуск на канале Россия 1</p>
+										<div class="video-text">
+											<p>Посмотрите наш выпуск на канале Россия 1</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -1057,14 +1085,14 @@
 			<section class="rs-news">
 				<div class="rs-news__container">
 					<div class="rs-news__wrapper">
-						<div class="rs-news__line">
-							<div class="rs-news__line-wrap"></div>
+						<div class="rs-news__line line line-vertical line-primary" data-aos>
+							<div class="rs-news__line-wrap line-wrap"></div>
 							<p>Новости</p>
 						</div>
 
-						<h2>Полезные материалы от наших экспертов</h2>
+						<h2 data-aos="fade-up" data-aos-delay="100">Полезные материалы <br> от наших экспертов</h2>
 
-						<div class="rs-news__slider swiper">
+						<div class="rs-news__slider swiper" data-aos="fade-up" data-aos-delay="200">
 							<div class="rs-news__swiper swiper-wrapper">
 								<div class="rs-news__slide swiper-slide">
 									<div class="rs-news__item">
@@ -1075,7 +1103,7 @@
 										</div>
 										<div class="rs-news__desc">
 											<a href="#">
-												<h5>Преимущества обращения за помощью к профессионалам по банкротству
+												<h5>Преимущества обращения за помощью к профессионалам по банкротству
 												</h5>
 											</a>
 											<a href="#" class="rs-btn _btn-primary-border">Подробнее</a>
@@ -1092,7 +1120,7 @@
 										</div>
 										<div class="rs-news__desc">
 											<a href="#">
-												<h5>Что такое процедура банкротства и когда она необходима?</h5>
+												<h5>Что такое процедура банкротства и когда она необходима?</h5>
 											</a>
 											<a href="#" class="rs-btn _btn-primary-border">Подробнее</a>
 										</div>
@@ -1108,7 +1136,7 @@
 										</div>
 										<div class="rs-news__desc">
 											<a href="#">
-												<h5>Как проходит процедура банкротства физических лиц?</h5>
+												<h5>Как проходит процедура банкротства физических лиц?</h5>
 											</a>
 											<a href="#" class="rs-btn _btn-primary-border">Подробнее</a>
 										</div>
@@ -1124,7 +1152,7 @@
 										</div>
 										<div class="rs-news__desc">
 											<a href="#">
-												<h5>Преимущества обращения за помощью к профессионалам по банкротству
+												<h5>Преимущества обращения за помощью к профессионалам по банкротству
 												</h5>
 											</a>
 											<a href="#" class="rs-btn _btn-primary-border">Подробнее</a>
@@ -1141,7 +1169,7 @@
 										</div>
 										<div class="rs-news__desc">
 											<a href="#">
-												<h5>Что такое процедура банкротства и когда она необходима?</h5>
+												<h5>Что такое процедура банкротства и когда она необходима?</h5>
 											</a>
 											<a href="#" class="rs-btn _btn-primary-border">Подробнее</a>
 										</div>
@@ -1157,24 +1185,24 @@
 										</div>
 										<div class="rs-news__desc">
 											<a href="#">
-												<h5>Как проходит процедура банкротства физических лиц?</h5>
+												<h5>Как проходит процедура банкротства физических лиц?</h5>
 											</a>
 											<a href="#" class="rs-btn _btn-primary-border">Подробнее</a>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="rs-reviews__navigation swiper-navigation">
-								<div class="rs-reviews__pagination swiper-pagination"></div>
-								<div class="rs-reviews__buttons swiper-buttons">
-									<div class="rs-reviews__button-prev swiper-button-prev">
+							<div class="rs-news__navigation swiper-navigation">
+								<div class="rs-news__pagination swiper-pagination"></div>
+								<div class="rs-news__buttons swiper-buttons">
+									<div class="rs-news__button-prev swiper-button-prev">
 										<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
 											xmlns="http://www.w3.org/2000/svg">
 											<path d="M0 3L5 0.113249V5.88675L0 3ZM22 3.5L4.5 3.5V2.5L22 2.5V3.5Z"
 												fill="#ABABA7" />
 										</svg>
 									</div>
-									<div class="rs-reviews__button-next swiper-button-next">
+									<div class="rs-news__button-next swiper-button-next">
 										<svg width="22" height="6" viewBox="0 0 22 6" fill="none"
 											xmlns="http://www.w3.org/2000/svg">
 											<path d="M22 3L17 0.113249V5.88675L22 3ZM0 3.5L17.5 3.5V2.5L0 2.5L0 3.5Z"
@@ -1206,9 +1234,10 @@
 										<div class="form__block">
 											<div class="form__row">
 												<div class="form__line">
-													<select name="form[]" placeholder="Укажите удобный день"
-														class="rs-input" required>
-														<option value="1" selected>Пункт №1</option>
+													<select name="form[]" class="rs-input" required>
+														<option value="1" disabled selected>Укажите удобный день
+														</option>
+														<option value="1">Пункт №1</option>
 														<option value="2">Пункт №2</option>
 														<option value="3">Пункт №3</option>
 														<option value="4">Пункт №4</option>
@@ -1217,9 +1246,10 @@
 
 												<div class="form__line">
 													<div class="form__line">
-														<select name="form[]" placeholder="Укажите удобное время"
-															class="rs-input" required>
-															<option value="1" selected>Пункт №1</option>
+														<select name="form[]" class="rs-input" required>
+															<option value="1" disabled selected>Укажите удобное время
+															</option>
+															<option value="1">Пункт №1</option>
 															<option value="2">Пункт №2</option>
 															<option value="3">Пункт №3</option>
 															<option value="4">Пункт №4</option>
@@ -1233,7 +1263,7 @@
 												</div>
 
 												<div class="form__button">
-													<button type="submit" class="rs-btn _btn-primary">Отправить</button>
+													<button type="submit" class="rs-btn _btn-second">Отправить</button>
 												</div>
 											</div>
 
@@ -1281,7 +1311,7 @@
 										<a href="#">Наш офис</a>
 									</li>
 
-									<li class="menu-item new_menu_item">
+									<li class="menu-item">
 										<a href="#">Агент Щит Права</a>
 									</li>
 
@@ -1336,11 +1366,11 @@
 								<div class="rs-footer__spollers_body">
 									<ul>
 										<li><a href="#">Возврат страховок</a></li>
-										<li><a href="#">Отсрочка по платежам за кредит через мировое соглашение</a></li>
-										<li><a href="#">Реструктуризация долгов через арбитражный суд</a></li>
-										<li><a href="#">Банкротство физических лиц</a></li>
-										<li><a href="#">Комплексная защита от коллекторов</a></li>
-										<li><a href="#">Работа с незаконными взысканиями денежных средств приставами</a>
+										<li><a href="#">Отсрочка по платежам за кредит через мировое соглашение</a></li>
+										<li><a href="#">Реструктуризация долгов через арбитражный суд</a></li>
+										<li><a href="#">Банкротство физических лиц</a></li>
+										<li><a href="#">Комплексная защита от коллекторов</a></li>
+										<li><a href="#">Работа с незаконными взысканиями денежных средств приставами</a>
 										</li>
 									</ul>
 								</div>
@@ -1349,10 +1379,12 @@
 							<div class="rs-footer__spollers_item">
 								<h5 class="rs-footer__spollers_title">мы в соцсетях</h5>
 								<div class="rs-footer__spollers_body">
-									<ul class="rs-footer__social">
-										<li><a href="#"><img src="./img/tg_footer.svg" alt=""></a></li>
-										<li><a href="#"><img src="./img/vk_footer.svg" alt=""></a></li>
-									</ul>
+									<div class="rs-footer__social">
+										<ul>
+											<li><a href="#"><img src="./img/tg_footer.svg" alt=""></a></li>
+											<li><a href="#"><img src="./img/vk_footer.svg" alt=""></a></li>
+										</ul>
+									</div>
 
 									<div class="rs-footer__bottom">
 										<ul>
@@ -1382,11 +1414,15 @@
 	<script src="lib/fancybox/fancybox.umd.js"></script>
 	<script src="js/rs-sliders-init.js"></script>
 	<script src="lib/aos/aos.js"></script>
-	<script>
-		window.addEventListener('load', () => { AOS.init({ duration: 500, easing: "ease-out-quart", once: true }); });
-	</script>
 	<script src="js/countUp-init.js" type="module"></script>
 	<script src="js/rs-script.js"></script>
+	<script>
+		window.addEventListener('load', () => {
+			setTimeout(() => {
+				AOS.init({ duration: 500, easing: "ease-out-quart", once: true });
+			}, 1000);
+		});
+	</script>
 
 </body>
 

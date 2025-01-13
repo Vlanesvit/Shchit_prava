@@ -1,10 +1,24 @@
+@import "../base/_mixin";
+
 .rs-picture-block {
 	// .rs-picture-block__logo
 	&__logo {
-		padding: 79px 0px 86px;
+		padding: 79px 16px 86px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		@include responsive-auto(padding-top, (79, 20), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(padding-bottom, (86, 20), (1439.98, 1169.98, 991.98));
+
+		img {
+			width: 100%;
+			height: 100%;
+			max-width: 167px;
+			object-fit: contain;
+
+			@include responsive-auto(max-width, (167, 80), (1439.98, 1169.98, 991.98));
+		}
 	}
 
 	// .rs-picture-block__line
@@ -13,28 +27,27 @@
 		top: 85px;
 		right: 0;
 		width: 100%;
-		max-width: 1710px;
-		height: 1px;
-		background-color: #d9b369;
-		z-index: 10;
+		max-width: 89.063vw;
+		z-index: 1;
 
-		&::after {
-			content: "";
-			position: absolute;
-			right: 100%;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 16px;
-			height: 16px;
-			border-radius: 50%;
-			border: 1px solid #d9b369;
+		@include responsive-auto(top, (85, 20), (1439.98, 1169.98, 991.98));
+
+		&-wrap {
+			&::after {
+				right: 100%;
+				top: 50%;
+				transform: translateY(-50%);
+			}
 		}
 	}
 
 	// .rs-picture-block__block
 	&__block {
-		display: flex;
 		position: relative;
+
+		@media (min-width: 767.98px) {
+			display: flex;
+		}
 	}
 
 	// .rs-picture-block__content
@@ -51,9 +64,11 @@
 
 	// .rs-picture-block__wrapper
 	&__wrapper {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 30px;
+		@media (min-width: 767.98px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 30px;
+		}
 	}
 
 	// .rs-picture-block__item
@@ -63,19 +78,26 @@
 	&__desc {
 		.rs-work & {
 			padding-top: 184px;
+			@include responsive-auto(padding-top, (184, 40), (1439.98, 1169.98, 991.98));
 		}
 
 		.rs-numbers & {
-			padding-top: 132px;
+			padding-top: 126px;
+			@include responsive-auto(padding-top, (132, 40), (1439.98, 1169.98, 991.98));
 		}
 	}
 
 	&__numbers {
 		padding-top: 129px;
-		color: #fff;
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
+
+		@media (min-width: 767.98px) {
+			color: #fff;
+		}
+
+		@include responsive-auto(padding-top, (129, 40), (1439.98, 1169.98, 991.98));
 
 		h4 {
 			font-weight: 400;
@@ -93,21 +115,13 @@
 
 			&-wrap {
 				flex-grow: 1;
-				border: 1px solid #d9b369;
-				position: relative;
 				margin-right: 28px;
+				width: auto;
 
-				&::before {
-					content: "";
-					display: block;
-					position: absolute;
+				&::after {
 					top: 50%;
 					left: 100%;
 					transform: translateY(-50%);
-					width: 16px;
-					height: 16px;
-					border-radius: 50%;
-					border: 1px solid #d9b369;
 				}
 			}
 		}
@@ -123,6 +137,9 @@
 					position: absolute;
 					bottom: 36px;
 					right: 32px;
+
+					@include responsive-auto(right, (32, 0), (1439.98, 1169.98, 991.98));
+					@include responsive-auto(bottom, (36, 10), (1439.98, 1169.98, 991.98));
 				}
 
 				[data-digits-counter] {
@@ -131,6 +148,8 @@
 					font-family: "Dihjauti", sans-serif;
 					display: flex;
 					align-items: center;
+
+					@include responsive-auto(font-size, (183, 70), (1439.98, 1169.98, 991.98));
 
 					&::after {
 						content: "+";
@@ -143,6 +162,11 @@
 						// line-height: 223px;
 						line-height: 120%;
 						text-transform: uppercase;
+
+						@include responsive-auto(font-size, (183, 70), (1439.98, 1169.98, 991.98));
+						@include responsive-auto(margin-top, (-86, -50), (1439.98, 1169.98, 991.98));
+						@include responsive-auto(margin-right, (10, 20), (1439.98, 1169.98, 991.98));
+						@include responsive-auto(margin-left, (-10, 0), (1439.98, 1169.98, 991.98));
 					}
 				}
 			}
@@ -155,6 +179,12 @@
 		flex: 0 0 49.2%;
 		// padding-bottom: 47.9%;
 		height: 920px;
+		@include responsive-auto(height, (920, 400), (1439.98, 1169.98, 991.98));
+		position: relative;
+
+		@media (max-width: 767.98px) {
+			display: none;
+		}
 
 		img {
 			position: absolute;
@@ -172,15 +202,25 @@
 		z-index: 10;
 		position: relative;
 
+		@include responsive-auto(margin-top, (-468, 30), (1439.98, 1169.98, 991.98));
+
 		&_wrapper {
 			position: relative;
 
 			.rs-work & {
 				padding: 62px 50px 61px 0px;
+
+				@include responsive-auto(padding-top, (62, 20), (1439.98, 1169.98, 991.98));
+				@include responsive-auto(padding-right, (50, 16), (1439.98, 1169.98, 991.98));
+				@include responsive-auto(padding-bottom, (61, 20), (1439.98, 1169.98, 991.98));
 			}
 
 			.rs-numbers & {
 				padding: 85px 60px 128px 0px;
+
+				@include responsive-auto(padding-top, (85, 20), (1439.98, 1169.98, 991.98));
+				@include responsive-auto(padding-right, (60, 16), (1439.98, 1169.98, 991.98));
+				@include responsive-auto(padding-bottom, (128, 20), (1439.98, 1169.98, 991.98));
 			}
 
 			&::before {
@@ -207,41 +247,27 @@
 			padding-right: 47px;
 			width: 100%;
 
+			@include responsive-auto(padding-right, (47, 16), (1439.98, 1169.98, 991.98));
+
 			&-wrap {
 				width: 100%;
-				position: relative;
 
 				&::before {
-					content: "";
-					display: block;
 					position: absolute;
-					top: 50%;
-					left: 100%;
-					transform: translateY(-50%);
-					width: 16px;
-					height: 16px;
-					border-radius: 50%;
-					border: 1px solid #0a4231;
+					width: 100vw !important;
+					left: auto;
+					right: 0%;
 				}
 
 				&::after {
-					content: "";
-					position: absolute;
-					width: 100vw;
-					top: 0%;
-					bottom: 0%;
-					left: auto;
-					right: 0%;
-					border: 1px solid #0a4231;
+					top: 50%;
+					left: 100%;
+					transform: translateY(-50%);
 				}
 			}
 
 			p {
 				margin-right: 9px;
-				font-family: "Open Sans", sans-serif;
-				font-style: italic;
-				font-weight: 400;
-				color: var(--second-color);
 			}
 		}
 
@@ -253,13 +279,31 @@
 				margin-top: 40px;
 				counter-reset: li;
 				gap: 30px;
+				@include responsive-auto(gap, (30, 15), (1439.98, 1169.98, 991.98));
+				@include responsive-auto(margin-top, (40, 20), (1439.98, 1169.98, 991.98));
+
+				@media (max-width: 991.98px) {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				@media (max-width: 767.98px) {
+					grid-template-columns: repeat(1, 1fr);
+				}
 			}
 
 			.rs-numbers & {
 				display: flex;
 				align-items: flex-start;
 				justify-content: space-between;
+				gap: 20px;
 				margin-top: 128px;
+
+				@media (max-width: 991.98px) {
+					flex-wrap: wrap;
+					gap: 50px 20px;
+				}
+
+				@include responsive-auto(margin-top, (128, 50), (1439.98, 1169.98, 991.98));
 			}
 		}
 
@@ -269,6 +313,8 @@
 				border-top: 1px solid #d9b369;
 				backdrop-filter: blur(42.20000076293945px);
 				padding: 30px;
+
+				@include responsive-auto(padding, (30, 16), (1439.98, 1169.98, 991.98));
 
 				&:not(:last-child) {
 					.rs-picture-block__footer_num {
@@ -283,6 +329,8 @@
 							letter-spacing: 0.05em;
 							text-transform: uppercase;
 							color: #d9b369;
+
+							@include responsive-auto(font-size, (50, 24), (1439.98, 1169.98, 991.98));
 						}
 					}
 				}
@@ -299,20 +347,30 @@
 			}
 
 			.rs-numbers & {
-				&:nth-child(1) {
-					max-width: 190px;
+				@media (min-width: 991.98px) {
+					&:nth-child(1) {
+						max-width: 190px;
+					}
+
+					&:nth-child(2) {
+						max-width: 310px;
+					}
+
+					&:nth-child(3) {
+						max-width: 268px;
+					}
+
+					&:nth-child(4) {
+						max-width: 267px;
+					}
 				}
 
-				&:nth-child(2) {
-					max-width: 310px;
+				@media (max-width: 991.98px) {
+					flex: 0 0 calc(50% - 10px);
 				}
 
-				&:nth-child(3) {
-					max-width: 268px;
-				}
-
-				&:nth-child(4) {
-					max-width: 267px;
+				@media (max-width: 539.98px) {
+					flex: 0 0 calc(100%);
 				}
 			}
 		}
@@ -320,6 +378,8 @@
 		// .rs-picture-block__footer_num
 		&_num {
 			margin-bottom: 15px;
+
+			@include responsive-auto(margin-bottom, (15, 10), (1439.98, 1169.98, 991.98));
 
 			img {
 				mix-blend-mode: lighten;
@@ -334,6 +394,9 @@
 			font-size: 30px;
 			color: #424242;
 			font-family: "Dihjauti", sans-serif;
+
+			@include responsive-auto(font-size, (30, 20), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(top, (-35, -10), (1439.98, 1169.98, 991.98));
 		}
 
 		// .rs-picture-block__footer_desc
@@ -349,10 +412,14 @@
 					font-size: 20px;
 					text-transform: uppercase;
 
+					@include responsive-auto(font-size, (20, 13), (1439.98, 1169.98, 991.98));
+
 					span {
 						font-weight: 400;
 						font-size: 100px;
 						color: #0a4231;
+
+						@include responsive-auto(font-size, (100, 50), (1439.98, 1169.98, 991.98));
 					}
 				}
 

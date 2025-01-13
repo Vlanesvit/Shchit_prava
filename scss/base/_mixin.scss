@@ -5,3 +5,19 @@
 		);
 	}
 }
+
+@mixin responsive-auto($property, $values, $breakpoints) {
+	$start: nth($values, 1); // Начальное значение
+	$end: nth($values, 2); // Конечное значение
+	$count: length($breakpoints); // Количество брейкпоинтов
+	$step: ($start - $end) / $count; // Шаг уменьшения
+
+	@for $i from 1 through $count {
+		$currentBreakpoint: nth($breakpoints, $i); // Текущий брейкпоинт
+		$currentValue: $start - ($step * $i); // Вычисляем значение
+
+		@media (max-width: #{$currentBreakpoint}px) {
+			#{$property}: #{$currentValue}px;
+		}
+	}
+}

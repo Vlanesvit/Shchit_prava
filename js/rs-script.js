@@ -51,6 +51,49 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+	// Получаем все видео-блоки
+	const videoBlocks = document.querySelectorAll(".video");
+
+	videoBlocks.forEach((block) => {
+		const video = block.querySelector(".video-tag");
+		const playButton = block.querySelector(".video-play");
+		const elementsToHide = block.querySelector(".video-block");
+
+		// Сохраняем изначальный постер
+		const poster = video.getAttribute("poster");
+
+		// Обработчик для кнопки
+		playButton.addEventListener("click", () => {
+			if (video.paused) {
+				// Запуск видео
+				video.play();
+				video.setAttribute("controls", ""); // Добавляем атрибут controls
+				playButton.classList.add("playing");
+				elementsToHide.style.display = "none"; // Скрываем элементы
+				video.removeAttribute("poster"); // Убираем постер
+			} else {
+				// Остановка видео
+				video.pause();
+				video.currentTime = 0; // Сброс воспроизведения к началу
+				video.setAttribute("poster", poster); // Восстанавливаем постер
+				video.removeAttribute("controls"); // Убираем атрибут controls
+				playButton.classList.remove("playing");
+				elementsToHide.style.display = ""; // Показываем элементы
+			}
+		});
+
+		// Обработчик для завершения видео
+		video.addEventListener("ended", () => {
+			video.currentTime = 0; // Сброс к началу
+			video.setAttribute("poster", poster); // Восстанавливаем постер
+			video.removeAttribute("controls"); // Убираем атрибут controls
+			playButton.classList.remove("playing");
+			elementsToHide.style.display = ""; // Показываем элементы
+		});
+	});
+});
+
 function wrapMenuText(items) {
 	const links = document.querySelectorAll(items);
 
@@ -66,6 +109,61 @@ function wrapMenuText(items) {
 	});
 }
 wrapMenuText('.rs-header__menu a')
+
+function parallaxImageVanilla(imageSelector) {
+	const images = document.querySelectorAll(imageSelector);
+
+	function updateParallax() {
+		const windowHeight = window.innerHeight;
+
+		images.forEach(image => {
+			const rect = image.getBoundingClientRect(); // Положение и размеры изображения
+			const imageCenter = rect.top + rect.height / 2; // Центр изображения
+			const viewportCenter = windowHeight / 2; // Центр области просмотра
+
+			// Вычисляем прогресс на основе разницы между центрами
+			const progress = (imageCenter - viewportCenter) / windowHeight;
+
+			// Ограничиваем прогресс для минимального смещения
+			const offset = Math.max(-1, Math.min(1, progress)) * 10; // Смещение от -10% до 10%
+
+			// Применяем трансформацию с плавным движением
+			image.style.transform = `translateY(${offset}%)`;
+		});
+	}
+
+	// Добавляем обработчики событий
+	window.addEventListener('scroll', updateParallax);
+	window.addEventListener('resize', updateParallax); // Пересчитываем на изменение размера экрана
+
+	// Вызываем функцию один раз при загрузке страницы
+	updateParallax();
+}
+parallaxImageVanilla('.rs-services__bg img');
+
+function strokeTextAnimation(elem) {
+	const texts = document.querySelectorAll(elem);
+
+	texts.forEach(text => {
+		const lines = text.innerHTML.split("<br>");
+		text.innerHTML = lines.map((line, index) => {
+			const delay = 100 + (index * 100);
+			return `
+        <div style="overflow: hidden;">
+          <span style="display: block;" class="line" data-aos="fade-up" data-aos-delay="${delay}">${line.trim()}</span>
+        </div>`;
+		}).join("");
+	});
+
+	// Обновляем AOS для учета новых элементов
+	AOS.refresh();
+}
+
+window.addEventListener('load', function () {
+	strokeTextAnimation('h1');
+	strokeTextAnimation('h2');
+	strokeTextAnimation('.rs-banner__desc h3');
+});
 
 /* ====================================
 Проверка поддержки webp, добавление класса webp или no-webp для HTML
@@ -111,9 +209,328 @@ function addLoadedClass() {
 addLoadedClass()
 
 /* ====================================
+Спойлеры/аккордионы
+==================================== */
+/*
+Для родителя слойлеров пишем атрибут data-spollers
+Для заголовков слойлеров пишем атрибут data-spoller
+
+Если нужно включать\выключать работу спойлеров на разных размерах экранов
+пишем параметры ширины и типа брейкпоинта.
+Например: 
+data-spollers="992,max" - спойлеры будут работать только на экранах меньше или равно 992px
+data-spollers="768,min" - спойлеры будут работать только на экранах больше или равно 768px
+
+Если нужно что бы в блоке открывался болько один слойлер добавляем атрибут data-one-spoller
+*/
+function spollers() {
+	const spollersArray = document.querySelectorAll('[data-spollers]');
+
+	function spollerClassInit() {
+		spollersArray.forEach(spoller => {
+			if (spoller) {
+				const spollersItem = spoller.querySelectorAll('[class*="_item"]')
+
+				spoller.classList.add('spollers')
+
+				spollersItem.forEach(item => {
+					if (item) {
+						const spollerTitle = item.querySelector('[class*="_title"]')
+						const spollerBody = item.querySelector('[class*="_body"]')
+
+						item.classList.add('spollers__item')
+						if (spollerTitle) {
+							spollerTitle.classList.add('spollers__title')
+						}
+						if (spollerBody) {
+							spollerBody.classList.add('spollers__body')
+						}
+					}
+				});
+			}
+		});
+	}
+	spollerClassInit()
+
+	if (spollersArray.length > 0) {
+		// Получение обычных слойлеров
+		const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
+			return !item.dataset.spollers.split(",")[0];
+		});
+		// Инициализация обычных слойлеров
+		if (spollersRegular.length) {
+			initSpollers(spollersRegular);
+		}
+		// Получение слойлеров с медиа запросами
+		let mdQueriesArray = dataMediaQueries(spollersArray, "spollers");
+		if (mdQueriesArray && mdQueriesArray.length) {
+			mdQueriesArray.forEach(mdQueriesItem => {
+				// Событие
+				mdQueriesItem.matchMedia.addEventListener("change", function () {
+					initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+				});
+				initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+			});
+		}
+		// Инициализация
+		function initSpollers(spollersArray, matchMedia = false) {
+			spollersArray.forEach(spollersBlock => {
+				spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
+				if (matchMedia.matches || !matchMedia) {
+					spollersBlock.classList.add('_spoller-init');
+					initSpollerBody(spollersBlock);
+					spollersBlock.addEventListener("click", setSpollerAction);
+				} else {
+					spollersBlock.classList.remove('_spoller-init');
+					initSpollerBody(spollersBlock, false);
+					spollersBlock.removeEventListener("click", setSpollerAction);
+				}
+			});
+		}
+		// Работа с контентом
+		function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+			let spollerTitles = spollersBlock.querySelectorAll('[data-spoller]');
+			if (spollerTitles.length) {
+				spollerTitles = Array.from(spollerTitles).filter(item => item.closest('[data-spollers]') === spollersBlock);
+				spollerTitles.forEach(spollerTitle => {
+					if (hideSpollerBody) {
+						spollerTitle.removeAttribute('tabindex');
+						if (!spollerTitle.classList.contains('_spoller-active')) {
+							spollerTitle.closest('.spollers__item').querySelector('.spollers__body').hidden = true;
+						}
+					} else {
+						spollerTitle.setAttribute('tabindex', '-1');
+						spollerTitle.closest('.spollers__item').querySelector('.spollers__body').hidden = false;
+					}
+				});
+			}
+		}
+		function setSpollerAction(e) {
+			const el = e.target;
+			if (el.closest('[data-spoller]')) {
+				const spollerTitle = el.closest('[data-spoller]');
+				const spollersBlock = spollerTitle.closest('[data-spollers]');
+				const oneSpoller = spollersBlock.hasAttribute('data-one-spoller');
+				const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+				if (!spollersBlock.querySelectorAll('._slide').length) {
+					if (oneSpoller && !spollerTitle.classList.contains('_spoller-active')) {
+						hideSpollersBody(spollersBlock);
+					}
+					spollerTitle.classList.toggle('_spoller-active');
+					_slideToggle(spollerTitle.closest('.spollers__item').querySelector('.spollers__body'), spollerSpeed);
+				}
+				e.preventDefault();
+			}
+		}
+		function hideSpollersBody(spollersBlock) {
+			const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._spoller-active');
+			const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+			if (spollerActiveTitle && !spollersBlock.querySelectorAll('._slide').length) {
+				spollerActiveTitle.classList.remove('_spoller-active');
+				_slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+			}
+		}
+		// Закрытие при клике вне спойлера
+		const spollersClose = document.querySelectorAll('[data-spoller-close]');
+		if (spollersClose.length) {
+			document.addEventListener("click", function (e) {
+				const el = e.target;
+				if (!el.closest('[data-spollers]')) {
+					spollersClose.forEach(spollerClose => {
+						const spollersBlock = spollerClose.closest('[data-spollers]');
+						if (spollersBlock.classList.contains('_spoller-init')) {
+							const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+							spollerClose.classList.remove('_spoller-active');
+							_slideUp(spollerClose.nextElementSibling, spollerSpeed);
+						}
+					});
+				}
+			});
+		}
+	}
+}
+if (document.querySelector('[data-spollers]')) {
+	spollers()
+}
+
+/* ====================================
+Табы
+==================================== */
+/*
+Для родителя табов пишем атрибут data-tabs
+Для родителя заголовков табов пишем атрибут data-tabs-titles
+Для родителя блоков табов пишем атрибут data-tabs-body
+Для родителя блоков табов можно указать data-tabs-hash, это втключит добавление хеша
+
+Если нужно чтобы табы открывались с анимацией 
+добавляем к data-tabs data-tabs-animate
+По умолчанию, скорость анимации 500ms, 
+указать свою скорость можно так: data-tabs-animate="1000"
+
+Если нужно чтобы табы превращались в "спойлеры", на неком размере экранов, пишем параметры ширины.
+Например: data-tabs="992" - табы будут превращаться в спойлеры на экранах меньше или равно 992px
+*/
+function tabs() {
+	const tabs = document.querySelectorAll('[data-tabs]');
+	let tabsActiveHash = [];
+
+	// Получаем хэш из URL
+	const hash = getHash();
+	if (hash && hash.startsWith('tab-')) {
+		tabsActiveHash = hash.replace('tab-', '').split('-');
+	}
+
+	if (tabs.length > 0) {
+		resetTabs();
+		handleHashChange();
+
+		// Отслеживание изменения хэша
+		window.addEventListener('hashchange', handleHashChange);
+
+		tabs.forEach((tabsBlock, index) => {
+			tabsBlock.classList.add('_tab-init');
+			tabsBlock.setAttribute('data-tabs-index', index);
+			tabsBlock.addEventListener("click", setTabsAction);
+			initTabs(tabsBlock);
+		});
+	}
+
+	// Инициализация медиа-запросов
+	let mdQueriesArray = dataMediaQueries(tabs, "tabs");
+	if (mdQueriesArray && mdQueriesArray.length) {
+		mdQueriesArray.forEach(mdQueriesItem => {
+			mdQueriesItem.matchMedia.addEventListener("change", () => {
+				setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+			});
+			setTitlePosition(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
+		});
+	}
+
+	// Сброс вкладок
+	function resetTabs() {
+		document.querySelectorAll('._tab-active').forEach(el => el.classList.remove('_tab-active'));
+	}
+
+	// Функция обработки изменения хэша
+	function handleHashChange() {
+		const hash = getHash();
+		if (hash && hash.startsWith('tab-')) {
+			tabsActiveHash = hash.replace('tab-', '').split('-');
+			const tabsBlockIndex = tabsActiveHash[0];
+			const tabsTabIndex = tabsActiveHash[1];
+
+			const tabsBlock = document.querySelector(`[data-tabs-index="${tabsBlockIndex}"]`);
+			if (tabsBlock) {
+				const tabTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
+				const tabItems = tabsBlock.querySelectorAll('[data-tabs-item]');
+
+				if (tabTitles[tabsTabIndex] && tabItems[tabsTabIndex]) {
+					tabsBlock.querySelectorAll('._tab-active').forEach(el => el.classList.remove('_tab-active'));
+					tabItems[tabsTabIndex].querySelectorAll('._tab-active').forEach(el => el.classList.remove('_tab-active'));
+					tabTitles[tabsTabIndex].classList.add('_tab-active');
+					tabItems[tabsTabIndex].classList.add('_tab-active');
+					// Плавный скролл к верху блока табов
+					tabsBlock.scrollIntoView({ behavior: "smooth", block: "start" });
+				}
+			}
+		}
+	}
+
+	// Инициализация табов
+	function initTabs(tabsBlock) {
+		const tabsTitles = tabsBlock.querySelectorAll('[data-tabs-titles] button');
+		const tabsContent = tabsBlock.querySelectorAll('[data-tabs-body]>*');
+		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+		const tabsActiveHashBlock = tabsActiveHash[0] == tabsBlockIndex;
+
+		if (tabsTitles.length > 0 && tabsContent.length > 0) {
+			tabsContent.forEach((content, index) => {
+				if (tabsTitles[index]) {
+					tabsTitles[index].setAttribute('data-tabs-title', '');
+					content.setAttribute('data-tabs-item', '');
+
+					// Если хэш блока не совпадает, добавляем активный класс
+					if (!tabsActiveHashBlock && index === 0) {
+						tabsTitles[index].classList.add('_tab-active');
+						content.classList.add('_tab-active');
+					}
+
+					if (tabsActiveHashBlock && index == tabsActiveHash[1]) {
+						tabsTitles[index].classList.add('_tab-active');
+						content.classList.add('_tab-active');
+					}
+				}
+			});
+		}
+	}
+
+	// Расстановка заголовков по медиа-запросам
+	function setTitlePosition(tabsMediaArray, matchMedia) {
+		tabsMediaArray.forEach(tabsMediaItem => {
+			const tabsTitles = tabsMediaItem.item.querySelector('[data-tabs-titles]');
+			const tabsContent = tabsMediaItem.item.querySelector('[data-tabs-body]');
+			const tabTitles = Array.from(tabsMediaItem.item.querySelectorAll('[data-tabs-title]'));
+			const tabItems = Array.from(tabsMediaItem.item.querySelectorAll('[data-tabs-item]'));
+
+			if (matchMedia.matches) {
+				tabItems.forEach((content, index) => {
+					tabsContent.append(tabTitles[index]);
+					tabsContent.append(content);
+					tabsMediaItem.item.classList.add('_tab-spoller');
+				});
+			} else {
+				tabTitles.forEach((title, index) => {
+					tabsTitles.append(title);
+					tabsMediaItem.item.classList.remove('_tab-spoller');
+				});
+			}
+		});
+	}
+
+	// Обновление состояния табов
+	function setTabsStatus(tabsBlock) {
+		const tabsTitles = tabsBlock.querySelectorAll('[data-tabs-title]');
+		const tabsContent = tabsBlock.querySelectorAll('[data-tabs-item]');
+		const tabsBlockIndex = tabsBlock.dataset.tabsIndex;
+
+		tabsContent.forEach((content, index) => {
+			if (tabsTitles[index].classList.contains('_tab-active')) {
+				content.classList.add('_tab-active');
+				setHash(`tab-${tabsBlockIndex}-${index}`);
+			} else {
+				tabsTitles[index].classList.remove('_tab-active')
+				content.classList.remove('_tab-active');
+			}
+		});
+	}
+
+	// Обработка кликов по заголовкам табов
+	function setTabsAction(e) {
+		const tabTitle = e.target.closest('[data-tabs-title]');
+		if (tabTitle) {
+			const tabsBlock = tabTitle.closest('[data-tabs]');
+			if (!tabTitle.classList.contains('_tab-active') && !tabsBlock.querySelector('._slide')) {
+				tabsBlock.querySelectorAll('[data-tabs-title]._tab-active').forEach(item => item.classList.remove('_tab-active'));
+				tabTitle.classList.add('_tab-active');
+				setTabsStatus(tabsBlock);
+			}
+			e.preventDefault();
+			AOS.refresh()
+		}
+	}
+}
+if (document.querySelector('[data-tabs]')) {
+	tabs()
+}
+
+/* ====================================
 Инициализация галереи
 ==================================== */
 Fancybox.bind("[data-fancybox]", {
+	// Отключение возврата картинки к блоку
+	hideClass: false, // Убирает стандартную анимацию
+	dragToClose: false, // Отключает перетаскивание для закрытия
+
 	Thumbs: {
 		type: 'classic',
 	},
@@ -389,4 +806,14 @@ let _slideToggle = (target, duration = 500) => {
 	} else {
 		return _slideUp(target, duration);
 	}
+}
+
+// Получение хеша в адресе сайта
+function getHash() {
+	if (location.hash) { return location.hash.replace('#', ''); }
+}
+// Указание хеша в адресе сайта
+function setHash(hash) {
+	hash = hash ? `#${hash}` : window.location.href.split('#')[0];
+	history.pushState('', '', hash);
 }

@@ -1,6 +1,21 @@
 .rs-banner {
-  padding-top: 246px;
   color: #fff;
+  padding-top: 246px;
+}
+@media (max-width: 1439.98px) {
+  .rs-banner {
+    padding-top: 188px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner {
+    padding-top: 130px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner {
+    padding-top: 72px;
+  }
 }
 .rs-banner__bg {
   position: absolute;
@@ -10,23 +25,32 @@
   height: 100%;
   z-index: -1;
 }
+@media (max-width: 991.98px) {
+  .rs-banner__bg {
+    max-height: 436px;
+  }
+}
 .rs-banner__bg img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.rs-banner__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+@media (min-width: 991.98px) {
+  .rs-banner__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
-.rs-banner__desc {
-  max-width: 544px;
-  margin-top: 56px;
+@media (min-width: 991.98px) {
+  .rs-banner__desc {
+    max-width: 544px;
+    margin-top: 56px;
+  }
 }
 .rs-banner__desc h1 {
   font-weight: 400;
@@ -35,6 +59,21 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #d9b369;
+}
+@media (max-width: 1439.98px) {
+  .rs-banner__desc h1 {
+    font-size: 116.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__desc h1 {
+    font-size: 87.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__desc h1 {
+    font-size: 58px;
+  }
 }
 .rs-banner__desc h2 {
   margin-top: -12px;
@@ -45,28 +84,136 @@
   text-transform: uppercase;
   color: #d9b369;
 }
+@media (max-width: 1439.98px) {
+  .rs-banner__desc h2 {
+    font-size: 42.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__desc h2 {
+    font-size: 31.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__desc h2 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__desc h2 {
+    margin-top: -3px;
+  }
+}
 .rs-banner__desc h3 {
   margin-top: 10px;
   line-height: 120%;
   color: #fff;
 }
-.rs-banner__features {
-  max-width: 384px;
+@media (max-width: 1439.98px) {
+  .rs-banner__desc h3 {
+    font-size: 23.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__desc h3 {
+    font-size: 17.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__desc h3 {
+    font-size: 11px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__desc h3 {
+    margin-top: 3px;
+  }
+}
+@media (min-width: 991.98px) {
+  .rs-banner__features {
+    max-width: 384px;
+  }
+}
+@media (min-width: 991.98px) and (max-width: 1169.98px) {
+  .rs-banner__features {
+    max-width: 300px;
+    padding-top: 50px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__features {
+    max-width: 158px;
+    margin-top: 13px;
+  }
 }
 .rs-banner__features ul li {
-  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 20px;
+}
+@media (max-width: 1439.98px) {
+  .rs-banner__features ul li {
+    padding: 15px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__features ul li {
+    padding: 10px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__features ul li {
+    padding: 5px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__features ul li {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 .rs-banner__features_img {
   margin-right: 15px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 60px;
           flex: 0 0 60px;
+}
+@media (max-width: 1439.98px) {
+  .rs-banner__features_img {
+    margin-right: 12.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__features_img {
+    margin-right: 10.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__features_img {
+    margin-right: 8px;
+  }
+}
+@media (max-width: 1439.98px) {
+  .rs-banner__features_img {
+    -ms-flex-preferred-size: 48.3333333333px;
+        flex-basis: 48.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__features_img {
+    -ms-flex-preferred-size: 36.6666666667px;
+        flex-basis: 36.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__features_img {
+    -ms-flex-preferred-size: 25px;
+        flex-basis: 25px;
+  }
 }
 .rs-banner__features_img img {
   width: 100%;
@@ -75,26 +222,78 @@
      object-fit: contain;
 }
 .rs-banner__features_text p {
-  font-weight: 400;
   font-size: 16px;
+  font-weight: 400;
   line-height: normal;
   letter-spacing: 0px;
 }
-.rs-banner__request {
-  margin-top: -21px;
-  -webkit-transform: translateY(83px);
-      -ms-transform: translateY(83px);
-          transform: translateY(83px);
-  background-color: var(--second-color);
-  padding: 43px 52px 43px 49px;
+@media (max-width: 1439.98px) {
+  .rs-banner__features_text p {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__features_text p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__features_text p {
+    font-size: 10px;
+  }
+}
+@media (min-width: 991.98px) {
+  .rs-banner__request {
+    margin-top: -21px;
+    -webkit-transform: translateY(83px);
+        -ms-transform: translateY(83px);
+            transform: translateY(83px);
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__request {
+    margin-top: 15px;
+  }
 }
 .rs-banner__request .rs-banner__wrapper {
+  background-color: var(--second-color);
+  padding: 43px 52px 43px 49px;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.rs-banner__title {
-  width: 100%;
-  max-width: 316px;
-  margin-right: 25px;
+@media (max-width: 1439.98px) {
+  .rs-banner__request .rs-banner__wrapper {
+    padding: 40px 30px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-banner__request .rs-banner__wrapper {
+    padding: 30px 20px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__request .rs-banner__wrapper {
+    padding: 30px 16px;
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
+  }
+}
+@media (min-width: 991.98px) {
+  .rs-banner__title {
+    width: 100%;
+    max-width: 316px;
+    margin-right: 25px;
+  }
+}
+@media (min-width: 991.98px) and (max-width: 1439.98px) {
+  .rs-banner__title {
+    max-width: 250px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-banner__title {
+    margin-bottom: 25px;
+  }
 }

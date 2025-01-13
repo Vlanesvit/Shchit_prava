@@ -1,5 +1,9 @@
+@import "../base/_mixin";
+
 .rs-text-block {
 	margin-top: 140px;
+
+	@include responsive-auto(margin-top, (140, 50), (1439.98, 1169.98, 991.98));
 
 	// .rs-text-block__container
 	&__container {
@@ -7,16 +11,26 @@
 
 	// .rs-text-block__wrapper
 	&__wrapper {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		gap: 30px;
+		@media (min-width: 767.98px) {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			gap: 30px;
+		}
+
+		@media (max-width: 767.98px) {
+			display: flex;
+			flex-direction: column-reverse;
+		}
 	}
 
 	// .rs-text-block__img
 	&__img {
-		grid-column: 1/6;
 		position: relative;
-		margin-left: -23px;
+
+		@media (min-width: 767.98px) {
+			margin-left: -23px;
+			grid-column: 1/6;
+		}
 
 		img {
 			width: 100%;
@@ -30,47 +44,49 @@
 		position: absolute;
 		left: calc(100% + 32px);
 		top: 0;
-		height: 455px;
-		max-width: 1px;
-		width: auto;
-		border: 1px solid #d9b369;
+		max-height: 23.7vw;
+		height: 100%;
 
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: 100%;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 16px;
-			height: 16px;
-			border-radius: 50%;
-			border: 1px solid #d9b369;
+		&-wrap {
+			&::after {
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 	}
 
 	// .rs-text-block__desc
 	&__desc {
-		grid-column: 7/13;
 		color: #fff;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: flex-start;
-		padding: 111px 0px;
+		padding: 20px 0px;
+
+		@media (min-width: 767.98px) {
+			grid-column: 7/13;
+		}
 	}
 
 	&__body {
 		& > p {
 			margin-top: 20px;
+
+			@include responsive-auto(margin-top, (20, 10), (1439.98, 1169.98, 991.98));
 		}
 
 		& > .rs-link {
 			margin-top: 30px;
+
+			@include responsive-auto(margin-top, (30, 10), (1439.98, 1169.98, 991.98));
 		}
 
 		p {
 			font-size: 20px;
+
+			@include responsive-auto(font-size, (20, 13), (1439.98, 1169.98, 991.98));
 		}
 	}
 
@@ -78,23 +94,28 @@
 	&__features {
 		margin-top: 30px;
 
+		@include responsive-auto(margin-top, (30, 15), (1439.98, 1169.98, 991.98));
+
 		ul {
 			display: flex;
+			gap: 30px;
+
+			@include responsive-auto(gap, (30, 15), (1439.98, 1169.98, 991.98));
+
+			@media (max-width: 539.98px) {
+				flex-direction: column;
+			}
 
 			li {
 				display: flex;
 				align-items: center;
-
-				&:not(:last-child) {
-					margin-right: 30px;
-				}
 			}
 		}
 
 		// .rs-text-block__features_circle
 		&_circle {
 			width: 83px;
-			aspect-ratio: 1;
+			height: 83px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -109,6 +130,10 @@
 			text-transform: uppercase;
 			position: relative;
 			margin-right: 10px;
+
+			@include responsive-auto(font-size, (20, 13), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(width, (83, 60), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(height, (83, 60), (1439.98, 1169.98, 991.98));
 
 			&::after {
 				content: "";

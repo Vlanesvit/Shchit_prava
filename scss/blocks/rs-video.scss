@@ -1,0 +1,78 @@
+@import "../base/_mixin";
+
+.rs-video {
+	margin-top: 84px;
+	padding-top: 80px;
+
+	@include responsive-auto(margin-top, (84, 25), (1439.98, 1169.98, 991.98));
+	@include responsive-auto(padding-top, (80, 25), (1439.98, 1169.98, 991.98));
+
+	@media (max-width: 991.98px) {
+		padding-left: 24px;
+	}
+
+	// .rs-video__container
+	&__container {
+	}
+
+	// .rs-video__wrapper
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	// .rs-video__line
+	&__line {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: flex-end;
+		margin-right: 20px;
+
+		@media (max-width: 991.98px) {
+			position: absolute;
+			top: 0;
+			left: 8px;
+		}
+
+		&-wrap {
+			height: 123px;
+			margin-top: 15px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			&::after {
+				top: 100%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	// .rs-video__block
+	&__block {
+		max-width: 1400px;
+		width: 100%;
+
+		& > p {
+			margin-top: 20px;
+			font-size: 20px;
+
+			@include responsive-auto(font-size, (20, 13), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(margin-top, (20, 10), (1439.98, 1169.98, 991.98));
+		}
+	}
+
+	// .rs-video__video
+	&__video {
+		margin-top: 50px;
+
+		@include responsive-auto(margin-top, (50, 30), (1439.98, 1169.98, 991.98));
+
+		.video {
+			padding-bottom: 48%;
+		}
+	}
+}

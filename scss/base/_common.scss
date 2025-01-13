@@ -2,6 +2,133 @@ section {
 	position: relative;
 }
 
+.line {
+	&-wrap {
+		width: 100%;
+		height: 100%;
+		position: relative;
+
+		&::before {
+			content: "";
+			width: 0%;
+			height: 100%;
+			transition: all 1s cubic-bezier(0.77, 0, 0.175, 1) 0.1s;
+			display: block;
+			background-color: transparent;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			border: 1px solid transparent;
+			opacity: 0;
+			transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1) 0.7s;
+		}
+	}
+
+	& > p {
+		font-family: "Open Sans", sans-serif;
+		font-style: italic;
+		font-weight: 400;
+		opacity: 0;
+		transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1) 0.7s;
+	}
+
+	& > h4 {
+		opacity: 0;
+		transition: opacity 1s cubic-bezier(0.77, 0, 0.175, 1) 0.7s;
+	}
+
+	&.line-horizontal {
+		.line-wrap {
+			&::before {
+				width: 0%;
+				height: 1px;
+			}
+		}
+	}
+
+	&.line-vertical {
+		.line-wrap {
+			&::before {
+				height: 0%;
+				width: 1px;
+			}
+		}
+
+		& > p {
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+		}
+	}
+
+	&.line-primary {
+		.line-wrap {
+			&::before {
+				background-color: #d9b369;
+			}
+			&::after {
+				border-color: #d9b369;
+			}
+		}
+
+		& > p {
+			color: #d9b369;
+		}
+	}
+
+	&.line-second {
+		.line-wrap {
+			&::before {
+				background-color: var(--second-color);
+			}
+
+			&::after {
+				border-color: var(--second-color);
+			}
+		}
+
+		& > p {
+			color: var(--second-color);
+		}
+	}
+
+	&.aos-animate {
+		&.line-horizontal {
+			.line-wrap {
+				&::before {
+					width: 100%;
+				}
+			}
+		}
+
+		&.line-vertical {
+			.line-wrap {
+				&::before {
+					height: 100%;
+				}
+			}
+		}
+
+		.line-wrap {
+			&::after {
+				opacity: 1;
+			}
+		}
+
+		& > p {
+			opacity: 1;
+		}
+
+		& > h4 {
+			opacity: 1;
+		}
+	}
+}
+
 // Text ========================================================================================================================================================
 h1 {
 	font-family: "Dihjauti", sans-serif;
@@ -23,11 +150,19 @@ h2 {
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 
-	span {
+	@include responsive-auto(font-size, (50, 24), (1439.98, 1169.98, 991.98));
+
+	.big {
 		display: block;
 		font-size: 90px;
 		color: #d9b369;
-		padding-bottom: 10px;
+		padding: 10px 0px;
+
+		@media (max-width: 991.98px) {
+			padding: 5px 0px;
+		}
+
+		@include responsive-auto(font-size, (90, 30), (1439.98, 1169.98, 991.98));
 	}
 }
 
@@ -39,6 +174,8 @@ h3 {
 	line-height: 130%;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
+
+	@include responsive-auto(font-size, (30, 20), (1439.98, 1169.98, 991.98));
 }
 
 h4 {
@@ -47,6 +184,8 @@ h4 {
 	font-size: 25px;
 	// line-height: 28px;
 	line-height: 110%;
+
+	@include responsive-auto(font-size, (25, 16), (1439.98, 1169.98, 991.98));
 }
 
 h5 {
@@ -56,6 +195,8 @@ h5 {
 	// line-height: 26px;
 	line-height: 120%;
 	text-transform: uppercase;
+
+	@include responsive-auto(font-size, (22, 20), (1439.98, 1169.98, 991.98));
 }
 
 p {
@@ -64,6 +205,8 @@ p {
 	// line-height: 27px;
 	line-height: 150%;
 	letter-spacing: 0.03em;
+
+	@include responsive-auto(font-size, (18, 13), (1439.98, 1169.98, 991.98));
 }
 
 // Button ========================================================================================================================================================
@@ -84,6 +227,11 @@ p {
 	background-color: transparent;
 	border-radius: 2px;
 	gap: 10px;
+
+	@media (max-width: 1439.98px) {
+		font-size: 14px;
+		padding: 14px 30px;
+	}
 
 	.border {
 		position: absolute;
@@ -186,7 +334,7 @@ p {
 		position: relative;
 
 		@media (max-width: 991.98px) {
-			margin-bottom: 10px;
+			margin-bottom: 24px;
 		}
 	}
 
@@ -213,6 +361,8 @@ p {
 		line-height: 140%;
 		color: #ddd;
 
+		@include responsive-auto(font-size, (14, 13), (1439.98, 1169.98, 991.98));
+
 		a {
 			text-decoration: underline;
 			text-decoration-skip-ink: none;
@@ -231,12 +381,129 @@ p {
 	width: 100%;
 	transition: 0.3s ease 0s;
 	transition-property: background-color, border-color;
-	padding: 16px 18px;
+	padding: 12px 18px;
 	border: 1px solid #cba55b;
 	background-color: transparent;
 	color: #fff;
+	font-weight: 400;
+	font-size: 16px;
+	// line-height: 26px;
+	line-height: 160%;
+	color: #ddd;
+
+	@include responsive-auto(font-size, (16, 13), (1439.98, 1169.98, 991.98));
+	@include responsive-auto(padding-top, (12, 15), (1439.98, 1169.98, 991.98));
+	@include responsive-auto(padding-bottom, (12, 15), (1439.98, 1169.98, 991.98));
 
 	&::placeholder {
 		color: #fff;
+	}
+
+	&:focus {
+		border-color: #fff;
+	}
+}
+
+select.rs-input {
+	color: #fff;
+	
+	option {
+		color: #222222;
+	}
+}
+
+.video {
+	position: relative;
+
+	img,
+	video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.video-tag {
+	}
+
+	.video-block {
+		padding: 16px;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.video-text {
+		margin-left: 24px;
+		max-width: 228px;
+
+		@media (max-width: 991.98px) {
+			margin-left: 8px;
+		}
+
+		p {
+			font-weight: 400;
+			// line-height: 22px;
+			line-height: 120%;
+			color: #d9b369;
+		}
+	}
+
+	.video-play {
+		width: 82px;
+		height: 82px;
+		flex-shrink: 0;
+		border-radius: 50%;
+		border: 1px solid #d9b369;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include responsive-auto(width, (82, 50), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(height, (82, 50), (1439.98, 1169.98, 991.98));
+
+		svg {
+			width: 23px;
+			height: 28px;
+			margin-right: -5px;
+
+			@include responsive-auto(width, (23, 20), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(height, (28, 20), (1439.98, 1169.98, 991.98));
+		}
+	}
+
+	.video-label {
+		position: absolute;
+		bottom: 45px;
+		left: 0;
+		color: #fff;
+		display: flex;
+		align-items: center;
+
+		@include responsive-auto(bottom, (45, 10), (1439.98, 1169.98, 991.98));
+
+		&::before {
+			content: "";
+			display: block;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='66' height='16' viewBox='0 0 66 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 8H50' stroke='%23D9B369'/%3e%3ccircle cx='58' cy='8' r='7.5' stroke='%23D9B369'/%3e%3c/svg%3e ");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			width: 66px;
+			height: 16px;
+			margin-right: 8px;
+		}
+
+		p {
+			letter-spacing: 0px;
+		}
 	}
 }
