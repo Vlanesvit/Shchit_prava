@@ -68,7 +68,7 @@
 	&__item {
 		width: 100%;
 		height: 100%;
-		border: 1px solid #d9b369;
+		border: 1px solid var(--primary-2-color);
 		padding: 60px 40px 40px 30px;
 		backdrop-filter: blur(42.20000076293945px);
 		color: #fff;
@@ -89,7 +89,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: 1px solid #d9b369;
+		border: 1px solid var(--primary-2-color);
 		border-radius: 50%;
 		background-color: #002312;
 
@@ -106,7 +106,7 @@
 			line-height: 120%;
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
-			color: #d9b369;
+			color: var(--primary-2-color);
 
 			@include responsive-auto(font-size, (32, 20), (1439.98, 1169.98, 991.98));
 		}
@@ -121,7 +121,7 @@
 			border-radius: inherit;
 			width: calc(100% - 7px);
 			height: calc(100% - 7px);
-			border: 1px solid #d9b369;
+			border: 1px solid var(--primary-2-color);
 		}
 	}
 

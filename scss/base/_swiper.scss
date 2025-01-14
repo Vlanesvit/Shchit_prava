@@ -108,7 +108,7 @@
 	position: relative;
 	top: 0%;
 	border-radius: 50%;
-	border: 1px solid #d9b369;
+	border: 1px solid var(--primary-2-color);
 	width: 67px;
 	height: 67px;
 	margin-top: 30px;
@@ -129,13 +129,13 @@
 
 		path {
 			transition: fill 0.3s ease 0s;
-			fill: #d9b369;
+			fill: var(--primary-2-color);
 		}
 	}
 
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: #d9b369;
+			background-color: var(--primary-2-color);
 
 			svg {
 				path {

@@ -1,0 +1,282 @@
+.rs-faq {
+  margin: 130px 0px;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq {
+    margin-top: 103.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq {
+    margin-top: 76.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 1439.98px) {
+  .rs-faq {
+    margin-bottom: 103.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq {
+    margin-bottom: 76.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq {
+    margin-bottom: 50px;
+  }
+}
+.rs-faq__spollers {
+  margin-top: 50px;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers {
+    margin-top: 30px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers {
+    margin-top: 20px;
+  }
+}
+.rs-faq__spollers_item {
+  padding: 20px 20px 40px;
+  border-top: 1px solid #d9b369;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_item {
+    padding-top: 18.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_item {
+    padding-top: 17.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_item {
+    padding-top: 16px;
+  }
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_item {
+    padding-right: 18.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_item {
+    padding-right: 17.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_item {
+    padding-right: 16px;
+  }
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_item {
+    padding-bottom: 35.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_item {
+    padding-bottom: 30.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_item {
+    padding-bottom: 26px;
+  }
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_item {
+    padding-left: 18.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_item {
+    padding-left: 17.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_item {
+    padding-left: 16px;
+  }
+}
+.rs-faq__spollers_title {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Dihjauti", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_title {
+    font-size: 25.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_title {
+    font-size: 20.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_title {
+    font-size: 16px;
+  }
+}
+.rs-faq__spollers_title._spoller-active i {
+  background-color: var(--primary-2-color);
+}
+.rs-faq__spollers_title._spoller-active i::before {
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+      -ms-transform: translate(-50%, -50%) rotate(-90deg);
+          transform: translate(-50%, -50%) rotate(-90deg);
+}
+.rs-faq__spollers_title._spoller-active i::before, .rs-faq__spollers_title._spoller-active i::after {
+  background-color: #fff;
+}
+.rs-faq__spollers_icon {
+  margin-left: 10px;
+  position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 68px;
+  height: 68px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid var(--primary-2-color);
+  border-radius: 50%;
+  -webkit-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_icon {
+    width: 62px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_icon {
+    width: 56px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_icon {
+    width: 50px;
+  }
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_icon {
+    height: 62px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_icon {
+    height: 56px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_icon {
+    height: 50px;
+  }
+}
+.rs-faq__spollers_icon::before, .rs-faq__spollers_icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-90deg);
+      -ms-transform: translate(-50%, -50%) rotate(-90deg);
+          transform: translate(-50%, -50%) rotate(-90deg);
+  width: 1px;
+  height: 22px;
+  background-color: var(--primary-2-color);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_icon::before, .rs-faq__spollers_icon::after {
+    height: 20px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_icon::before, .rs-faq__spollers_icon::after {
+    height: 18px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_icon::before, .rs-faq__spollers_icon::after {
+    height: 16px;
+  }
+}
+.rs-faq__spollers_icon::before {
+  -webkit-transform: translate(-50%, -50%) rotate(0deg);
+      -ms-transform: translate(-50%, -50%) rotate(0deg);
+          transform: translate(-50%, -50%) rotate(0deg);
+}
+.rs-faq__spollers_body {
+  margin-top: 20px;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_body {
+    margin-top: 16.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_body {
+    margin-top: 13.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_body {
+    margin-top: 10px;
+  }
+}
+.rs-faq__spollers_body p {
+  font-size: 20px;
+}
+@media (max-width: 1439.98px) {
+  .rs-faq__spollers_body p {
+    font-size: 17.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-faq__spollers_body p {
+    font-size: 15.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-faq__spollers_body p {
+    font-size: 13px;
+  }
+}

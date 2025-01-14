@@ -6,6 +6,59 @@
 
 	@include responsive-auto(padding-top, (246, 72), (1439.98, 1169.98, 991.98));
 
+	&.rs-banner-inner {
+		padding-top: 240px;
+		margin-bottom: 250px;
+		@include responsive-auto(padding-top, (240, 72), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(margin-bottom, (250, 0), (1439.98, 1169.98, 991.98));
+
+		@media (min-width: 991.98px) {
+			height: 729px;
+		}
+	}
+
+	&:not(.rs-banner-inner) .rs-banner__desc {
+		h1 {
+			font-weight: 400;
+			font-size: 146px;
+			// line-height: 161px;
+			line-height: 110%;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: var(--primary-2-color);
+
+			@include responsive-auto(font-size, (146, 58), (1439.98, 1169.98, 991.98));
+		}
+
+		h2 {
+			margin-top: -12px;
+			font-weight: 400;
+			font-size: 53px;
+			// line-height: 59px;
+			line-height: 110%;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+			color: var(--primary-2-color);
+
+			@include responsive-auto(font-size, (53, 21), (1439.98, 1169.98, 991.98));
+
+			@media (max-width: 991.98px) {
+				margin-top: -3px;
+			}
+		}
+
+		h3 {
+			margin-top: 10px;
+			line-height: 120%;
+			color: #fff;
+			@include responsive-auto(font-size, (30, 11), (1439.98, 1169.98, 991.98));
+
+			@media (max-width: 991.98px) {
+				margin-top: 3px;
+			}
+		}
+	}
+
 	// .rs-banner__bg
 	&__bg {
 		position: absolute;
@@ -17,6 +70,10 @@
 
 		@media (max-width: 991.98px) {
 			max-height: 436px;
+
+			.rs-banner-inner & {
+				max-height: 100%;
+			}
 		}
 
 		img {
@@ -41,6 +98,67 @@
 			// align-items: center;
 			justify-content: space-between;
 		}
+
+		.rs-banner-inner & {
+			display: block;
+		}
+	}
+
+	.rs-breadcrumbs {
+		position: relative;
+		margin-bottom: 110px;
+
+		@include responsive-auto(margin-bottom, (110, 30), (1439.98, 1169.98, 991.98));
+
+		// .rs-breadcrumbs__container
+		&__container {
+		}
+
+		// .rs-breadcrumbs__navigation
+		&__navigation {
+		}
+
+		// .rs-breadcrumbs__list
+		&__list {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+
+			li {
+				font-family: "Open Sans", sans-serif;
+				font-style: italic;
+				font-weight: 400;
+				font-size: 18px;
+				// line-height: 27px;
+				line-height: 150%;
+				letter-spacing: 0.03em;
+				color: #fff;
+				display: flex;
+				align-items: center;
+
+				@include responsive-auto(font-size, (18, 13), (1439.98, 1169.98, 991.98));
+
+				& > a {
+					display: flex;
+					align-items: center;
+					transition: all 0.3s ease 0s;
+
+					@media (any-hover: hover) {
+						&:hover {
+							color: var(--primary-color);
+						}
+					}
+				}
+
+				&:not(:last-child) {
+					&::after {
+						content: "—";
+						display: block;
+						margin: 0px 5px;
+					}
+				}
+			}
+		}
 	}
 
 	// .rs-banner__desc
@@ -50,43 +168,13 @@
 			margin-top: 56px;
 		}
 
-		h1 {
-			font-weight: 400;
-			font-size: 146px;
-			// line-height: 161px;
-			line-height: 110%;
-			letter-spacing: 0.05em;
-			text-transform: uppercase;
-			color: #d9b369;
+		.rs-banner-inner & {
+			max-width: 100%;
 
-			@include responsive-auto(font-size, (146, 58), (1439.98, 1169.98, 991.98));
-		}
-
-		h2 {
-			margin-top: -12px;
-			font-weight: 400;
-			font-size: 53px;
-			// line-height: 59px;
-			line-height: 110%;
-			letter-spacing: 0.05em;
-			text-transform: uppercase;
-			color: #d9b369;
-
-			@include responsive-auto(font-size, (53, 21), (1439.98, 1169.98, 991.98));
-
-			@media (max-width: 991.98px) {
-				margin-top: -3px;
-			}
-		}
-
-		h3 {
-			margin-top: 10px;
-			line-height: 120%;
-			color: #fff;
-			@include responsive-auto(font-size, (30, 11), (1439.98, 1169.98, 991.98));
-
-			@media (max-width: 991.98px) {
-				margin-top: 3px;
+			h4 {
+				font-family: "Inter", sans-serif;
+				margin-top: 10px;
+				max-width: 780px;
 			}
 		}
 	}
@@ -154,6 +242,11 @@
 		@media (min-width: 991.98px) {
 			margin-top: -21px;
 			transform: translateY(83px);
+
+			.rs-banner-inner & {
+				margin-top: 0px;
+				transform: translateY(123px);
+			}
 		}
 
 		@media (max-width: 991.98px) {
@@ -163,7 +256,11 @@
 		.rs-banner__wrapper {
 			background-color: var(--second-color);
 			padding: 43px 52px 43px 49px;
-			align-items: flex-start;
+
+			@media (min-width: 991.98px) {
+				display: flex;
+				align-items: flex-start;
+			}
 
 			@media (max-width: 1439.98px) {
 				padding: 40px 30px;

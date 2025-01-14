@@ -2,6 +2,10 @@ section {
 	position: relative;
 }
 
+.primary {
+	color: var(--primary-2-color);
+}
+
 .line {
 	&-wrap {
 		width: 100%;
@@ -68,15 +72,15 @@ section {
 	&.line-primary {
 		.line-wrap {
 			&::before {
-				background-color: #d9b369;
+				background-color: var(--primary-2-color);
 			}
 			&::after {
-				border-color: #d9b369;
+				border-color: var(--primary-2-color);
 			}
 		}
 
 		& > p {
-			color: #d9b369;
+			color: var(--primary-2-color);
 		}
 	}
 
@@ -138,7 +142,9 @@ h1 {
 	line-height: 120%;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
-	color: #d9b369;
+	color: var(--primary-2-color);
+
+	@include responsive-auto(font-size, (55, 24), (1439.98, 1169.98, 991.98));
 }
 
 h2 {
@@ -155,7 +161,7 @@ h2 {
 	.big {
 		display: block;
 		font-size: 90px;
-		color: #d9b369;
+		color: var(--primary-2-color);
 		padding: 10px 0px;
 
 		@media (max-width: 991.98px) {
@@ -207,6 +213,13 @@ p {
 	letter-spacing: 0.03em;
 
 	@include responsive-auto(font-size, (18, 13), (1439.98, 1169.98, 991.98));
+}
+
+blockquote {
+	padding: 30px;
+	border: 1px solid var(--primary-2-color);
+
+	@include responsive-auto(padding, (30, 16), (1439.98, 1169.98, 991.98));
 }
 
 // Button ========================================================================================================================================================
@@ -292,8 +305,13 @@ p {
 		left: 0;
 		height: 1px;
 		width: 100%;
-		background: linear-gradient(90deg, #d9b369 calc(100% / 3), transparent 0 calc(200% / 3), #d9b369 0) var(--d, 0%)
-			100% /300% 3px no-repeat;
+		background: linear-gradient(
+				90deg,
+				var(--primary-2-color) calc(100% / 3),
+				transparent 0 calc(200% / 3),
+				var(--primary-2-color) 0
+			)
+			var(--d, 0%) 100% /300% 3px no-repeat;
 		transition: 0.5s;
 	}
 
@@ -316,25 +334,42 @@ p {
 	&__block {
 	}
 
-	&__row {
-		@media (min-width: 991.98px) {
-			display: flex;
-
-			& > * {
-				&:not(:last-child) {
-					margin-right: 24px;
-				}
-			}
-		}
-	}
-
 	// .form__line
 	&__line {
 		width: 100%;
 		position: relative;
+		margin-bottom: 20px;
 
 		@media (max-width: 991.98px) {
 			margin-bottom: 24px;
+		}
+	}
+
+	&__footer {
+		@media (min-width: 991.98px) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			.form__agreement {
+				max-width: 100%;
+				margin-top: 0px;
+			}
+		}
+	}
+
+	&__row {
+		@media (min-width: 991.98px) {
+			display: flex;
+			margin-bottom: 20px;
+
+			& > * {
+				margin-bottom: 0px;
+
+				&:not(:last-child) {
+					margin-right: 24px;
+				}
+			}
 		}
 	}
 
@@ -406,7 +441,7 @@ p {
 
 select.rs-input {
 	color: #fff;
-	
+
 	option {
 		color: #222222;
 	}
@@ -453,7 +488,7 @@ select.rs-input {
 			font-weight: 400;
 			// line-height: 22px;
 			line-height: 120%;
-			color: #d9b369;
+			color: var(--primary-2-color);
 		}
 	}
 
@@ -462,7 +497,7 @@ select.rs-input {
 		height: 82px;
 		flex-shrink: 0;
 		border-radius: 50%;
-		border: 1px solid #d9b369;
+		border: 1px solid var(--primary-2-color);
 		display: flex;
 		align-items: center;
 		justify-content: center;

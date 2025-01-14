@@ -1,3 +1,21 @@
+.rs-features {
+  margin-bottom: 140px;
+}
+@media (max-width: 1439.98px) {
+  .rs-features {
+    margin-bottom: 103.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-features {
+    margin-bottom: 66.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-features {
+    margin-bottom: 30px;
+  }
+}
 .rs-features__wrapper {
   position: relative;
   padding-top: 140px;

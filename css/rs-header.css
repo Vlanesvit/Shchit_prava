@@ -259,7 +259,7 @@
   display: none;
 }
 .menu-open .rs-header__menu .menu__icon {
-  border-color: #d9b369;
+  border-color: var(--primary-2-color);
 }
 .menu-open .rs-header__menu .menu__icon .menu__icon_svg svg rect:nth-child(1) {
   -webkit-transform: rotate(-45deg) translateY(5.6px) translateX(-3.5px);

@@ -215,7 +215,7 @@
 				font-size: 50px;
 				// line-height: 60px;
 				line-height: 120%;
-				color: #d9b369;
+				color: var(--primary-2-color);
 				display: flex;
 				align-items: center;
 
@@ -306,7 +306,7 @@
 							left: 0;
 							width: 48px;
 							height: 3px;
-							background-color: #d9b369;
+							background-color: var(--primary-2-color);
 
 							@include responsive-auto(width, (48, 30), (1439.98, 1169.98, 991.98));
 							@include responsive-auto(height, (3, 1), (1439.98, 1169.98, 991.98));
@@ -351,7 +351,7 @@
 			border-radius: 50%;
 			width: 162px;
 			height: 162px;
-			background: #d9b369;
+			background: var(--primary-2-color);
 			border-radius: 50%;
 			display: flex;
 			align-items: center;

@@ -1,0 +1,75 @@
+@import "../base/_mixin";
+
+.rs-parallax {
+	position: relative;
+	height: 400px;
+	overflow: hidden;
+
+	&.rs-subscribe {
+		height: 325px;
+		margin-bottom: 195px;
+
+		@include responsive-auto(margin-bottom, (195, 50), (1439.98, 1169.98, 991.98));
+	}
+
+	// .rs-parallax__bg
+	&__bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: auto;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			object-fit: cover;
+		}
+	}
+
+	// .rs-parallax__content
+	&__content {
+		height: 100%;
+	}
+
+	// .rs-parallax__container
+	&__container {
+		height: 100%;
+	}
+
+	// .rs-parallax__body
+	&__body {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: #fff;
+
+		.rs-subscribe & {
+			max-width: 840px;
+			margin: 0 auto;
+		}
+
+		h2 {
+			color: var(--primary-2-color);
+		}
+
+		p {
+			margin-top: 10px;
+		}
+
+		.rs-btn {
+			margin-top: 34px;
+
+			@include responsive-auto(margin-top, (34, 10), (1439.98, 1169.98, 991.98));
+		}
+	}
+}

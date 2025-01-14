@@ -1,6 +1,12 @@
 @import "../base/_mixin";
 
 .rs-picture-block {
+	&.overlay {
+		margin-bottom: -135px;
+
+		@include responsive-auto(padding-top, (-135, 0), (1439.98, 1169.98, 991.98));
+	}
+
 	// .rs-picture-block__logo
 	&__logo {
 		padding: 79px 16px 86px;
@@ -78,12 +84,12 @@
 	&__desc {
 		.rs-work & {
 			padding-top: 184px;
-			@include responsive-auto(padding-top, (184, 40), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-top, (184, 0), (1439.98, 1169.98, 991.98));
 		}
 
 		.rs-numbers & {
 			padding-top: 126px;
-			@include responsive-auto(padding-top, (132, 40), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-top, (132, 0), (1439.98, 1169.98, 991.98));
 		}
 	}
 
@@ -181,6 +187,7 @@
 		height: 920px;
 		@include responsive-auto(height, (920, 400), (1439.98, 1169.98, 991.98));
 		position: relative;
+		z-index: -1;
 
 		@media (max-width: 767.98px) {
 			display: none;
@@ -201,6 +208,7 @@
 		margin-top: -468px;
 		z-index: 10;
 		position: relative;
+		z-index: 1;
 
 		@include responsive-auto(margin-top, (-468, 30), (1439.98, 1169.98, 991.98));
 
@@ -310,7 +318,7 @@
 		// .rs-picture-block__footer_item
 		&_item {
 			.rs-work & {
-				border-top: 1px solid #d9b369;
+				border-top: 1px solid var(--primary-2-color);
 				backdrop-filter: blur(42.20000076293945px);
 				padding: 30px;
 
@@ -328,7 +336,7 @@
 							line-height: 120%;
 							letter-spacing: 0.05em;
 							text-transform: uppercase;
-							color: #d9b369;
+							color: var(--primary-2-color);
 
 							@include responsive-auto(font-size, (50, 24), (1439.98, 1169.98, 991.98));
 						}

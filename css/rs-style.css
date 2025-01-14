@@ -37,6 +37,7 @@
   --bg-color: #fff;
   --font-color: #222222;
   --primary-color: #cba55b;
+  --primary-2-color: #d9b369;
   --second-color: #0a4231;
 }
 
@@ -228,6 +229,10 @@ section {
   position: relative;
 }
 
+.primary {
+  color: var(--primary-2-color);
+}
+
 .line-wrap {
   width: 100%;
   height: 100%;
@@ -283,13 +288,13 @@ section {
           transform: rotate(180deg);
 }
 .line.line-primary .line-wrap::before {
-  background-color: #d9b369;
+  background-color: var(--primary-2-color);
 }
 .line.line-primary .line-wrap::after {
-  border-color: #d9b369;
+  border-color: var(--primary-2-color);
 }
 .line.line-primary > p {
-  color: #d9b369;
+  color: var(--primary-2-color);
 }
 .line.line-second .line-wrap::before {
   background-color: var(--second-color);
@@ -323,7 +328,22 @@ h1 {
   line-height: 120%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #d9b369;
+  color: var(--primary-2-color);
+}
+@media (max-width: 1439.98px) {
+  h1 {
+    font-size: 44.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  h1 {
+    font-size: 34.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  h1 {
+    font-size: 24px;
+  }
 }
 
 h2 {
@@ -352,7 +372,7 @@ h2 {
 h2 .big {
   display: block;
   font-size: 90px;
-  color: #d9b369;
+  color: var(--primary-2-color);
   padding: 10px 0px;
 }
 @media (max-width: 991.98px) {
@@ -467,6 +487,26 @@ p {
   }
 }
 
+blockquote {
+  padding: 30px;
+  border: 1px solid var(--primary-2-color);
+}
+@media (max-width: 1439.98px) {
+  blockquote {
+    padding: 25.3333333333px;
+  }
+}
+@media (max-width: 1169.98px) {
+  blockquote {
+    padding: 20.6666666667px;
+  }
+}
+@media (max-width: 991.98px) {
+  blockquote {
+    padding: 16px;
+  }
+}
+
 .rs-btn {
   cursor: pointer;
   position: relative;
@@ -555,8 +595,8 @@ p {
   left: 0;
   height: 1px;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, color-stop(33.3333333333%, #d9b369), color-stop(0, transparent), color-stop(0, #d9b369)) var(--d, 0%) 100%/300% 3px no-repeat;
-  background: linear-gradient(90deg, #d9b369 33.3333333333%, transparent 0 66.6666666667%, #d9b369 0) var(--d, 0%) 100%/300% 3px no-repeat;
+  background: -webkit-gradient(linear, left top, right top, color-stop(33.3333333333%, var(--primary-2-color)), color-stop(0, transparent), color-stop(0, var(--primary-2-color))) var(--d, 0%) 100%/300% 3px no-repeat;
+  background: linear-gradient(90deg, var(--primary-2-color) 33.3333333333%, transparent 0 66.6666666667%, var(--primary-2-color) 0) var(--d, 0%) 100%/300% 3px no-repeat;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -572,23 +612,45 @@ p {
 .form__wrapper {
   position: relative;
 }
+.form__line {
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+}
+@media (max-width: 991.98px) {
+  .form__line {
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 991.98px) {
+  .form__footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .form__footer .form__agreement {
+    max-width: 100%;
+    margin-top: 0px;
+  }
+}
 @media (min-width: 991.98px) {
   .form__row {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-bottom: 20px;
+  }
+  .form__row > * {
+    margin-bottom: 0px;
   }
   .form__row > *:not(:last-child) {
     margin-right: 24px;
-  }
-}
-.form__line {
-  width: 100%;
-  position: relative;
-}
-@media (max-width: 991.98px) {
-  .form__line {
-    margin-bottom: 24px;
   }
 }
 @media (max-width: 991.98px) {
@@ -768,7 +830,7 @@ select.rs-input option {
 .video .video-text p {
   font-weight: 400;
   line-height: 120%;
-  color: #d9b369;
+  color: var(--primary-2-color);
 }
 .video .video-play {
   width: 82px;
@@ -776,7 +838,7 @@ select.rs-input option {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   border-radius: 50%;
-  border: 1px solid #d9b369;
+  border: 1px solid var(--primary-2-color);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1014,7 +1076,7 @@ select.rs-input option {
   position: relative;
   top: 0%;
   border-radius: 50%;
-  border: 1px solid #d9b369;
+  border: 1px solid var(--primary-2-color);
   width: 67px;
   height: 67px;
   margin-top: 30px;
@@ -1078,12 +1140,12 @@ select.rs-input option {
 .swiper-button-prev svg path {
   -webkit-transition: fill 0.3s ease 0s;
   transition: fill 0.3s ease 0s;
-  fill: #d9b369;
+  fill: var(--primary-2-color);
 }
 @media (any-hover: hover) {
   .swiper-button-next:hover,
   .swiper-button-prev:hover {
-    background-color: #d9b369;
+    background-color: var(--primary-2-color);
   }
   .swiper-button-next:hover svg path,
   .swiper-button-prev:hover svg path {

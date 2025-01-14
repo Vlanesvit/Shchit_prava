@@ -1,0 +1,114 @@
+@import "../base/_mixin";
+
+.rs-faq {
+	margin: 130px 0px;
+
+	@include responsive-auto(margin-top, (130, 50), (1439.98, 1169.98, 991.98));
+	@include responsive-auto(margin-bottom, (130, 50), (1439.98, 1169.98, 991.98));
+
+	// .rs-faq__container
+	&__container {
+	}
+
+	// .rs-faq__spollers
+	&__spollers {
+		margin-top: 50px;
+
+		@include responsive-auto(margin-top, (50, 20), (1439.98, 1169.98, 991.98));
+
+		// .rs-faq__spollers_item
+		&_item {
+			padding: 20px 20px 40px;
+			border-top: 1px solid #d9b369;
+
+			@include responsive-auto(padding-top, (20, 16), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-right, (20, 16), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-bottom, (40, 26), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-left, (20, 16), (1439.98, 1169.98, 991.98));
+		}
+
+		// .rs-faq__spollers_title
+		&_title {
+			width: 100%;
+			text-align: left;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			font-family: "Dihjauti", sans-serif;
+			font-weight: 400;
+			font-size: 30px;
+			// line-height: 39px;
+			line-height: 130%;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+
+			@include responsive-auto(font-size, (30, 16), (1439.98, 1169.98, 991.98));
+
+			&._spoller-active {
+				i {
+					background-color: var(--primary-2-color);
+
+					&::before {
+						transform: translate(-50%, -50%) rotate(-90deg);
+					}
+
+					&::before,
+					&::after {
+						background-color: #fff;
+					}
+				}
+			}
+		}
+
+		// .rs-faq__spollers_icon
+		&_icon {
+			margin-left: 10px;
+			position: relative;
+			flex-shrink: 0;
+			width: 68px;
+			height: 68px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid var(--primary-2-color);
+			border-radius: 50%;
+			transition: background-color 0.3s ease 0s;
+
+			@include responsive-auto(width, (68, 50), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(height, (68, 50), (1439.98, 1169.98, 991.98));
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%) rotate(-90deg);
+				width: 1px;
+				height: 22px;
+				background-color: var(--primary-2-color);
+				transition: all 0.3s ease 0s;
+
+				@include responsive-auto(height, (22, 16), (1439.98, 1169.98, 991.98));
+			}
+
+			&::before {
+				transform: translate(-50%, -50%) rotate(0deg);
+			}
+		}
+
+		// .rs-faq__spollers_body
+		&_body {
+			margin-top: 20px;
+
+			@include responsive-auto(margin-top, (20, 10), (1439.98, 1169.98, 991.98));
+
+			p {
+				font-size: 20px;
+
+				@include responsive-auto(font-size, (20, 13), (1439.98, 1169.98, 991.98));
+			}
+		}
+	}
+}

@@ -1,6 +1,9 @@
 @import "../base/_mixin";
 
 .rs-features {
+	margin-bottom: 140px;
+	@include responsive-auto(margin-bottom, (140, 30), (1439.98, 1169.98, 991.98));
+
 	// .rs-features__container
 	&__container {
 	}

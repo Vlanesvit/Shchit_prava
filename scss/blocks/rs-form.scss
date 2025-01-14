@@ -1,0 +1,124 @@
+@import "../base/_mixin";
+
+.rs-form {
+	padding: 53px 0px;
+	background-color: var(--primary-2-color);
+	color: #fff;
+
+	@include responsive-auto(padding-top, (53, 50), (1439.98, 1169.98, 991.98));
+	@include responsive-auto(padding-bottom, (53, 50), (1439.98, 1169.98, 991.98));
+
+	&.rs-form-inner {
+		background: var(--second-color);
+		padding: 100px 0px 103px;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+		@include responsive-auto(padding-top, (100, 50), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(padding-bottom, (103, 50), (1439.98, 1169.98, 991.98));
+	}
+
+	&.overlay {
+		padding-top: 250px;
+
+		@include responsive-auto(padding-top, (250, 50), (1439.98, 1169.98, 991.98));
+	}
+
+	&:not(.rs-form-inner) {
+		.rs-form__wrapper {
+			@media (min-width: 991.98px) {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 30px;
+			}
+		}
+
+		.rs-form__title {
+			@media (min-width: 991.98px) {
+				grid-column: 1/2;
+			}
+
+			@media (max-width: 991.98px) {
+				margin-bottom: 15px;
+			}
+		}
+
+		.rs-form__form {
+			@media (min-width: 991.98px) {
+				grid-column: 2/5;
+			}
+		}
+
+		.rs-input {
+			border-color: #fff;
+		}
+
+		.form__button {
+			@media (min-width: 991.98px) {
+				min-width: 230px;
+			}
+		}
+
+		.form__agreement {
+			color: #fff;
+			max-width: 100%;
+		}
+	}
+
+	// .rs-form__request
+	&__request {
+	}
+
+	// .rs-form__container
+	&__container {
+	}
+
+	// .rs-form__wrapper
+	&__wrapper {
+	}
+
+	// .rs-form__title
+	&__title {
+		.rs-form-inner & {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			max-width: 1250px;
+			margin: 0 auto 30px;
+
+			@include responsive-auto(margin-bottom, (30, 15), (1439.98, 1169.98, 991.98));
+
+			h2 {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+
+				&::after {
+					content: "";
+					display: block;
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='150' height='22' viewBox='0 0 150 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='11' r='7.5' stroke='%23D9B369' /%3e%3cpath d='M16 11H134' stroke='%23D9B369' /%3e%3ccircle cx='142' cy='11' r='7.5' stroke='%23D9B369' /%3e%3c/svg%3e");
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: contain;
+					width: 150px;
+					height: 22px;
+					margin-top: 30px;
+
+					@include responsive-auto(margin-top, (30, 15), (1439.98, 1169.98, 991.98));
+				}
+			}
+
+			h4 {
+				font-family: "Inter", sans-serif;
+				margin-top: 10px;
+			}
+		}
+	}
+
+	// .rs-form__form
+	&__form {
+	}
+}

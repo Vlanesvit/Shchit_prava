@@ -67,7 +67,7 @@
 			background-color: rgba(255, 255, 255, 0.2);
 		}
 		.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-			background: #d9b369;
+			background: var(--primary-2-color);
 		}
 	}
 
@@ -112,7 +112,7 @@
 			right: -10px;
 			width: calc(100% + 20px);
 			height: calc(100% + 20px);
-			border: 1px solid #d9b369;
+			border: 1px solid var(--primary-2-color);
 			pointer-events: none;
 		}
 
@@ -147,7 +147,7 @@
 			// line-height: 29px;
 			line-height: 130%;
 			letter-spacing: 0.05em;
-			color: #d9b369;
+			color: var(--primary-2-color);
 
 			@include responsive-auto(margin-top, (30, 15), (1439.98, 1169.98, 991.98));
 		}

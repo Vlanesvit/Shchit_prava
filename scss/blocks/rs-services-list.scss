@@ -1,0 +1,118 @@
+@import "../base/_mixin";
+
+.rs-services-list {
+	margin-top: 140px;
+	margin-bottom: 140px;
+
+	@include responsive-auto(margin-top, (140, 50), (1439.98, 1169.98, 991.98));
+	@include responsive-auto(margin-bottom, (140, 50), (1439.98, 1169.98, 991.98));
+
+	// .rs-services-list__container
+	&__container {
+	}
+
+	// .rs-services-list__wrapper
+	&__wrapper {
+	}
+
+	// .rs-services-list__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 72px 30px;
+
+		@include responsive-auto(column-gap, (30, 16), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(row-gap, (72, 50), (1439.98, 1169.98, 991.98));
+
+		@media (max-width: 1169.98px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 539.98px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	// .rs-services-list__item
+	&__item {
+		height: 100%;
+		width: 100%;
+		position: relative;
+
+		a {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			border: 1.14px solid var(--primary-2-color);
+			padding: 76px 30px 30px 30px;
+
+			@include responsive-auto(padding-top, (76, 50), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-right, (30, 16), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-bottom, (30, 16), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-left, (30, 16), (1439.98, 1169.98, 991.98));
+		}
+	}
+
+	// .rs-services-list__img
+	&__img {
+		--bottom: 40px;
+		position: absolute;
+		left: 0;
+		bottom: calc(100% - var(--bottom));
+		background-color: #fff;
+		left: 33px;
+		border: 1px solid var(--primary-2-color);
+		border-radius: 50%;
+		width: 85px;
+		height: 85px;
+		padding: 21px;
+
+		@include responsive-auto(--bottom, (40, 20), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(left, (33, 20), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(width, (85, 50), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(height, (85, 50), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(padding, (21, 10), (1439.98, 1169.98, 991.98));
+
+		&::after {
+			content: "";
+			position: absolute;
+			display: block;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: inherit;
+			width: calc(100% - 3px);
+			height: calc(100% - 3px);
+			border: 1px solid var(--primary-2-color);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	// .rs-services-list__desc
+	&__desc {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		// .rs-services-list__desc_body
+		&_body {
+			margin-bottom: 30px;
+
+			@include responsive-auto(margin-bottom, (30, 15), (1439.98, 1169.98, 991.98));
+
+			p {
+				margin-top: 14px;
+
+				@include responsive-auto(margin-bottom, (14, 10), (1439.98, 1169.98, 991.98));
+			}
+		}
+	}
+}

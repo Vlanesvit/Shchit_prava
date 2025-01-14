@@ -5,6 +5,14 @@
 
 	@include responsive-auto(margin-top, (140, 50), (1439.98, 1169.98, 991.98));
 
+	&.rs-text-block-inner {
+		margin-top: 140px;
+		margin-bottom: 140px;
+
+		@include responsive-auto(margin-top, (140, 50), (1439.98, 1169.98, 991.98));
+		@include responsive-auto(margin-bottom, (140, 50), (1439.98, 1169.98, 991.98));
+	}
+
 	// .rs-text-block__container
 	&__container {
 	}
@@ -58,7 +66,6 @@
 
 	// .rs-text-block__desc
 	&__desc {
-		color: #fff;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -67,6 +74,39 @@
 
 		@media (min-width: 767.98px) {
 			grid-column: 7/13;
+		}
+
+		.rs-text-block-inner & {
+			padding-right: 130px;
+			position: relative;
+
+			@include responsive-auto(padding-right, (130, 30), (1439.98, 1169.98, 991.98));
+		}
+
+		&_line {
+			width: auto;
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: center;
+			justify-content: flex-end;
+
+			&-wrap {
+				width: auto;
+				height: 123px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top: 15px;
+
+				&::after {
+					top: 100%;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
 		}
 	}
 
@@ -77,16 +117,28 @@
 			@include responsive-auto(margin-top, (20, 10), (1439.98, 1169.98, 991.98));
 		}
 
-		& > .rs-link {
+		.rs-link {
 			margin-top: 30px;
 
 			@include responsive-auto(margin-top, (30, 10), (1439.98, 1169.98, 991.98));
+		}
+
+		.rs-btn {
+			margin-top: 20px;
+
+			@include responsive-auto(margin-top, (20, 10), (1439.98, 1169.98, 991.98));
 		}
 
 		p {
 			font-size: 20px;
 
 			@include responsive-auto(font-size, (20, 13), (1439.98, 1169.98, 991.98));
+		}
+
+		blockquote {
+			margin-top: 20px;
+
+			@include responsive-auto(margin-top, (20, 10), (1439.98, 1169.98, 991.98));
 		}
 	}
 
@@ -119,7 +171,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			border: 1px solid #d9b369;
+			border: 1px solid var(--primary-2-color);
 			border-radius: 50%;
 			font-family: "Dihjauti", sans-serif;
 			font-weight: 400;
@@ -145,7 +197,7 @@
 				border-radius: inherit;
 				width: calc(100% - 7px);
 				height: calc(100% - 7px);
-				border: 1px solid #d9b369;
+				border: 1px solid var(--primary-2-color);
 			}
 		}
 

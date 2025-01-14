@@ -1,3 +1,21 @@
+.rs-picture-block.overlay {
+  margin-bottom: -135px;
+}
+@media (max-width: 1439.98px) {
+  .rs-picture-block.overlay {
+    padding-top: -90px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-picture-block.overlay {
+    padding-top: -45px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-picture-block.overlay {
+    padding-top: 0px;
+  }
+}
 .rs-picture-block__logo {
   padding: 79px 16px 86px;
   display: -webkit-box;
@@ -124,17 +142,17 @@
 }
 @media (max-width: 1439.98px) {
   .rs-work .rs-picture-block__desc {
-    padding-top: 136px;
+    padding-top: 122.6666666667px;
   }
 }
 @media (max-width: 1169.98px) {
   .rs-work .rs-picture-block__desc {
-    padding-top: 88px;
+    padding-top: 61.3333333333px;
   }
 }
 @media (max-width: 991.98px) {
   .rs-work .rs-picture-block__desc {
-    padding-top: 40px;
+    padding-top: 0px;
   }
 }
 .rs-numbers .rs-picture-block__desc {
@@ -142,17 +160,17 @@
 }
 @media (max-width: 1439.98px) {
   .rs-numbers .rs-picture-block__desc {
-    padding-top: 101.3333333333px;
+    padding-top: 88px;
   }
 }
 @media (max-width: 1169.98px) {
   .rs-numbers .rs-picture-block__desc {
-    padding-top: 70.6666666667px;
+    padding-top: 44px;
   }
 }
 @media (max-width: 991.98px) {
   .rs-numbers .rs-picture-block__desc {
-    padding-top: 40px;
+    padding-top: 0px;
   }
 }
 .rs-picture-block__numbers {
@@ -363,6 +381,7 @@
           flex: 0 0 49.2%;
   height: 920px;
   position: relative;
+  z-index: -1;
 }
 @media (max-width: 1439.98px) {
   .rs-picture-block__img {
@@ -397,6 +416,7 @@
   margin-top: -468px;
   z-index: 10;
   position: relative;
+  z-index: 1;
 }
 @media (max-width: 1439.98px) {
   .rs-picture-block__footer {
@@ -657,7 +677,7 @@
   }
 }
 .rs-work .rs-picture-block__footer_item {
-  border-top: 1px solid #d9b369;
+  border-top: 1px solid var(--primary-2-color);
   -webkit-backdrop-filter: blur(42.2000007629px);
           backdrop-filter: blur(42.2000007629px);
   padding: 30px;
@@ -686,7 +706,7 @@
   line-height: 120%;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #d9b369;
+  color: var(--primary-2-color);
 }
 @media (max-width: 1439.98px) {
   .rs-work .rs-picture-block__footer_item:not(:last-child) .rs-picture-block__footer_num::before {

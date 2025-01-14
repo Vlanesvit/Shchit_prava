@@ -4,56 +4,6 @@
 	background: linear-gradient(180deg, #0a4231 0%, #002413 100%);
 	color: #fff;
 
-	// .rs-footer__request
-	&__request {
-		padding: 53px 0px;
-		background-color: #d9b369;
-
-		@include responsive-auto(padding-top, (53, 20), (1439.98, 1169.98, 991.98));
-		@include responsive-auto(padding-bottom, (53, 20), (1439.98, 1169.98, 991.98));
-
-		.rs-footer__wrapper {
-			@media (min-width: 991.98px) {
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 30px;
-			}
-		}
-
-		.rs-input {
-			border-color: #fff;
-		}
-
-		.form__button {
-			@media (min-width: 991.98px) {
-				min-width: 230px;
-			}
-		}
-
-		.form__agreement {
-			color: #fff;
-			max-width: 100%;
-		}
-	}
-
-	// .rs-footer__title
-	&__title {
-		@media (min-width: 991.98px) {
-			grid-column: 1/2;
-		}
-
-		@media (max-width: 991.98px) {
-			margin-bottom: 15px;
-		}
-	}
-
-	// .rs-footer__form
-	&__form {
-		@media (min-width: 991.98px) {
-			grid-column: 2/5;
-		}
-	}
-
 	// .rs-footer__head
 	&__head {
 		padding: 50px 0px;
@@ -214,7 +164,7 @@
 								font-size: 50px;
 								line-height: 70%;
 								letter-spacing: 0.03em;
-								color: #d9b369;
+								color: var(--primary-2-color);
 								margin-bottom: 32px;
 
 								@include responsive-auto(font-size, (50, 24), (1439.98, 1169.98, 991.98));
@@ -320,7 +270,7 @@
 	// .rs-footer__bottom
 	&__bottom {
 		margin: auto 0px 0px 0px;
-		
+
 		@media (max-width: 991.98px) {
 			margin-top: 20px;
 		}

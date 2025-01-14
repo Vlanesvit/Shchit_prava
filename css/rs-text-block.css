@@ -16,6 +16,40 @@
     margin-top: 50px;
   }
 }
+.rs-text-block.rs-text-block-inner {
+  margin-top: 140px;
+  margin-bottom: 140px;
+}
+@media (max-width: 1439.98px) {
+  .rs-text-block.rs-text-block-inner {
+    margin-top: 110px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-text-block.rs-text-block-inner {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-text-block.rs-text-block-inner {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 1439.98px) {
+  .rs-text-block.rs-text-block-inner {
+    margin-bottom: 110px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-text-block.rs-text-block-inner {
+    margin-bottom: 80px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-text-block.rs-text-block-inner {
+    margin-bottom: 50px;
+  }
+}
 @media (min-width: 767.98px) {
   .rs-text-block__wrapper {
     display: grid;
@@ -64,7 +98,6 @@
           transform: translateX(-50%);
 }
 .rs-text-block__desc {
-  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,6 +118,65 @@
     grid-column: 7/13;
   }
 }
+.rs-text-block-inner .rs-text-block__desc {
+  padding-right: 130px;
+  position: relative;
+}
+@media (max-width: 1439.98px) {
+  .rs-text-block-inner .rs-text-block__desc {
+    padding-right: 96.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-text-block-inner .rs-text-block__desc {
+    padding-right: 63.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-text-block-inner .rs-text-block__desc {
+    padding-right: 30px;
+  }
+}
+.rs-text-block__desc_line {
+  width: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.rs-text-block__desc_line-wrap {
+  width: auto;
+  height: 123px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+.rs-text-block__desc_line-wrap::after {
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
 .rs-text-block__body > p {
   margin-top: 20px;
 }
@@ -103,21 +195,39 @@
     margin-top: 10px;
   }
 }
-.rs-text-block__body > .rs-link {
+.rs-text-block__body .rs-link {
   margin-top: 30px;
 }
 @media (max-width: 1439.98px) {
-  .rs-text-block__body > .rs-link {
+  .rs-text-block__body .rs-link {
     margin-top: 23.3333333333px;
   }
 }
 @media (max-width: 1169.98px) {
-  .rs-text-block__body > .rs-link {
+  .rs-text-block__body .rs-link {
     margin-top: 16.6666666667px;
   }
 }
 @media (max-width: 991.98px) {
-  .rs-text-block__body > .rs-link {
+  .rs-text-block__body .rs-link {
+    margin-top: 10px;
+  }
+}
+.rs-text-block__body .rs-btn {
+  margin-top: 20px;
+}
+@media (max-width: 1439.98px) {
+  .rs-text-block__body .rs-btn {
+    margin-top: 16.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-text-block__body .rs-btn {
+    margin-top: 13.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-text-block__body .rs-btn {
     margin-top: 10px;
   }
 }
@@ -137,6 +247,24 @@
 @media (max-width: 991.98px) {
   .rs-text-block__body p {
     font-size: 13px;
+  }
+}
+.rs-text-block__body blockquote {
+  margin-top: 20px;
+}
+@media (max-width: 1439.98px) {
+  .rs-text-block__body blockquote {
+    margin-top: 16.6666666667px;
+  }
+}
+@media (max-width: 1169.98px) {
+  .rs-text-block__body blockquote {
+    margin-top: 13.3333333333px;
+  }
+}
+@media (max-width: 991.98px) {
+  .rs-text-block__body blockquote {
+    margin-top: 10px;
   }
 }
 .rs-text-block__features {
@@ -206,7 +334,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #d9b369;
+  border: 1px solid var(--primary-2-color);
   border-radius: 50%;
   font-family: "Dihjauti", sans-serif;
   font-weight: 400;
@@ -274,5 +402,5 @@
   border-radius: inherit;
   width: calc(100% - 7px);
   height: calc(100% - 7px);
-  border: 1px solid #d9b369;
+  border: 1px solid var(--primary-2-color);
 }
