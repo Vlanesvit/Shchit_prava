@@ -53,12 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 	// Получаем все видео-блоки
-	const videoBlocks = document.querySelectorAll(".video");
+	const videoBlocks = document.querySelectorAll("section .video");
 
 	videoBlocks.forEach((block) => {
 		const video = block.querySelector(".video-tag");
-		const playButton = block.querySelector(".video-play");
 		const elementsToHide = block.querySelector(".video-block");
+		const playButton = elementsToHide.querySelector(".video-play");
 
 		// Сохраняем изначальный постер
 		const poster = video.getAttribute("poster");
@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 });
-
 function wrapMenuText(items) {
 	const links = document.querySelectorAll(items);
 
@@ -109,7 +108,6 @@ function wrapMenuText(items) {
 	});
 }
 wrapMenuText('.rs-header__menu a')
-
 function parallaxImageVanilla(imageSelector) {
 	const images = document.querySelectorAll(imageSelector);
 

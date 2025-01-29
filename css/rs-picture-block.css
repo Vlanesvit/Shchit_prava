@@ -110,6 +110,11 @@
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 }
+@media (max-width: 991.98px) {
+  .rs-picture-block__line {
+    display: none;
+  }
+}
 .rs-picture-block__block {
   position: relative;
 }

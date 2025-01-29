@@ -38,12 +38,6 @@
 			max-width: 360px;
 
 			@include responsive-auto(max-width, (360, 200), (1439.98, 1169.98, 991.98));
-
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: contain;
-			}
 		}
 	}
 

@@ -92,6 +92,12 @@
 		@media (any-hover: hover) {
 			&:hover {
 				transform: translateY(-10px);
+
+				.rs-news__desc {
+					h5 {
+						color: var(--primary-2-color);
+					}
+				}
 			}
 		}
 	}
@@ -126,6 +132,38 @@
 		}
 	}
 
+	&__date {
+		position: absolute;
+		top: 34px;
+		left: -10px;
+		display: flex;
+		align-items: center;
+
+		@include responsive-auto(bottom, (45, 10), (1439.98, 1169.98, 991.98));
+
+		&::before {
+			content: "";
+			display: block;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='45' height='16' viewBox='0 0 45 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 8H29' stroke='%23D9B369'/%3e%3ccircle cx='37' cy='8' r='7.5' stroke='%23D9B369'/%3e%3c/svg%3e ");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+			width: 45px;
+			height: 16px;
+			margin-right: 7px;
+		}
+
+		&_text {
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 21px;
+			letter-spacing: 0.03em;
+			padding: 0px 10px 0px 10px;
+			border-radius: 61px;
+			background-color: var(--primary-2-color);
+		}
+	}
+
 	// .rs-news__desc
 	&__desc {
 		margin-top: 34px;
@@ -147,7 +185,7 @@
 			// line-height: 29px;
 			line-height: 130%;
 			letter-spacing: 0.05em;
-			color: var(--primary-2-color);
+			transition: color 0.3s ease 0s;
 
 			@include responsive-auto(margin-top, (30, 15), (1439.98, 1169.98, 991.98));
 		}

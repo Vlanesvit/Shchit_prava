@@ -125,6 +125,8 @@
 
 		.rs-btn {
 			margin-top: 20px;
+			font-size: 14px;
+			width: 100%;
 
 			@include responsive-auto(margin-top, (20, 10), (1439.98, 1169.98, 991.98));
 		}

@@ -50,6 +50,11 @@
 
 		.rs-input {
 			border-color: #fff;
+			padding-top: 15.5px;
+			padding-top: 15.5px;
+
+			@include responsive-auto(padding-top, (15.5, 15), (1439.98, 1169.98, 991.98));
+			@include responsive-auto(padding-bottom, (15.5, 15), (1439.98, 1169.98, 991.98));
 		}
 
 		.form__button {

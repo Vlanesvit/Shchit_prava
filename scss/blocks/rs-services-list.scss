@@ -38,6 +38,34 @@
 		height: 100%;
 		width: 100%;
 		position: relative;
+		transition: transform 0.3s ease 0s !important;
+
+		&::after {
+			content: "";
+			position: absolute;
+			display: block;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: inherit;
+			width: calc(100% - 7px);
+			height: calc(100% - 7px);
+			border: 1px solid var(--primary-2-color);
+			z-index: -1;
+			pointer-events: none;
+			opacity: 0;
+			transition: opacity 0.3s ease 0s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				transform: translateY(-25px) !important;
+
+				&::after {
+					opacity: 1;
+				}
+			}
+		}
 
 		a {
 			height: 100%;
@@ -107,6 +135,10 @@
 			margin-bottom: 30px;
 
 			@include responsive-auto(margin-bottom, (30, 15), (1439.98, 1169.98, 991.98));
+
+			h4 {
+				text-transform: uppercase;
+			}
 
 			p {
 				margin-top: 14px;

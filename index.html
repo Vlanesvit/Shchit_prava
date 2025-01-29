@@ -169,6 +169,32 @@
 		<main class="page">
 
 			<link rel="stylesheet" href="css/rs-banner.css">
+			<script>
+				// Ждём, пока весь контент на странице будет загружен
+				window.addEventListener('load', () => {
+					// Получаем элементы
+					const banner = document.querySelector('.rs-banner');
+					const requestBlock = document.querySelector('.rs-banner__request');
+					const bgBlock = document.querySelector('.rs-banner__bg');
+
+					// Проверяем, что все элементы существуют
+					if (banner && requestBlock && bgBlock) {
+						// Функция для обновления высоты bgBlock
+						function updateBgHeight() {
+							// Проверяем ширину экрана
+							if (window.innerWidth < 991.98) {
+								bgBlock.style.maxHeight = (banner.offsetHeight - requestBlock.offsetHeight) + 'px';
+							}
+						}
+
+						// Вызываем функцию при загрузке страницы
+						updateBgHeight();
+
+						// Также обновляем высоту при изменении размера окна
+						window.addEventListener('resize', updateBgHeight);
+					}
+				});
+			</script>
 			<section class="rs-banner">
 				<div class="rs-banner__bg" data-aos="fade" data-aos-delay="0">
 					<picture>
@@ -291,7 +317,7 @@
 						<div class="rs-about__img" data-aos="fade-up" data-aos-delay="200">
 							<div class="rs-about__img_block">
 								<div class="video">
-									<video class="video-tag" poster="./img/video_preview_1.jpg">
+									<video class="video-tag" playsinline poster="./img/video_preview_1.jpg">
 										<source src="img/video_1.mp4" type="video/mp4">
 									</video>
 
@@ -1061,7 +1087,7 @@
 
 							<div class="rs-video__video" data-aos="fade-up" data-aos-delay="100">
 								<div class="video">
-									<video class="video-tag" poster="./img/video_2_preview.jpg">
+									<video class="video-tag" playsinline poster="./img/video_2_preview.jpg">
 										<source src="img/video_2.mp4" type="video/mp4">
 									</video>
 
@@ -1102,6 +1128,7 @@
 											<a href="#">
 												<img src="./img/news_1.jpg" alt="">
 											</a>
+											<div class="rs-news__date">16.10.2024</div>
 										</div>
 										<div class="rs-news__desc">
 											<a href="#">
