@@ -41,7 +41,8 @@
   position: relative;
 }
 .rs-video .video img,
-.rs-video .video video {
+.rs-video .video video,
+.rs-video .video iframe {
   position: absolute;
   top: 0;
   left: 0;

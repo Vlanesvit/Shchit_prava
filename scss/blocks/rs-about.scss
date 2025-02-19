@@ -27,9 +27,10 @@
 
 	.video {
 		position: relative;
-	
+
 		img,
-		video {
+		video,
+		iframe {
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -37,10 +38,10 @@
 			height: 100%;
 			object-fit: cover;
 		}
-	
+
 		.video-tag {
 		}
-	
+
 		.video-block {
 			padding: 16px;
 			width: 100%;
@@ -53,15 +54,15 @@
 			align-items: center;
 			justify-content: center;
 		}
-	
+
 		.video-text {
 			margin-left: 24px;
 			max-width: 228px;
-	
+
 			@media (max-width: 991.98px) {
 				margin-left: 8px;
 			}
-	
+
 			p {
 				font-weight: 400;
 				// line-height: 22px;
@@ -69,7 +70,7 @@
 				color: var(--primary-2-color);
 			}
 		}
-	
+
 		.video-play {
 			width: 82px;
 			height: 82px;
@@ -79,20 +80,20 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-	
+
 			@include responsive-auto(width, (82, 50), (1439.98, 1169.98, 991.98));
 			@include responsive-auto(height, (82, 50), (1439.98, 1169.98, 991.98));
-	
+
 			svg {
 				width: 23px;
 				height: 28px;
 				margin-right: -5px;
-	
+
 				@include responsive-auto(width, (23, 20), (1439.98, 1169.98, 991.98));
 				@include responsive-auto(height, (28, 20), (1439.98, 1169.98, 991.98));
 			}
 		}
-	
+
 		.video-label {
 			position: absolute;
 			bottom: 45px;
@@ -100,9 +101,9 @@
 			color: #fff;
 			display: flex;
 			align-items: center;
-	
+
 			@include responsive-auto(bottom, (45, 10), (1439.98, 1169.98, 991.98));
-	
+
 			&::before {
 				content: "";
 				display: block;
@@ -114,7 +115,7 @@
 				height: 16px;
 				margin-right: 8px;
 			}
-	
+
 			p {
 				letter-spacing: 0px;
 			}

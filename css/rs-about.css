@@ -82,7 +82,8 @@
   position: relative;
 }
 .rs-about .video img,
-.rs-about .video video {
+.rs-about .video video,
+.rs-about .video iframe {
   position: absolute;
   top: 0;
   left: 0;

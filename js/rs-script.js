@@ -52,47 +52,74 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-	// Получаем все видео-блоки
-	const videoBlocks = document.querySelectorAll("section .video");
+    const videoBlocks = document.querySelectorAll("section .video");
 
-	videoBlocks.forEach((block) => {
-		const video = block.querySelector(".video-tag");
-		const elementsToHide = block.querySelector(".video-block");
-		const playButton = elementsToHide.querySelector(".video-play");
+    videoBlocks.forEach((block) => {
+        const video = block.querySelector(".video-tag");
+        const wrapper = block.querySelector(".video-wrapper");
+        const videoSrc = wrapper?.dataset.src;
+        const playButton = block.querySelector(".video-play");
+        const elementsToHide = block.querySelector(".video-block");
 
-		// Сохраняем изначальный постер
-		const poster = video.getAttribute("poster");
+        if (video) {
+            // Сохраняем постер
+            const posterSrc = video.getAttribute("poster");
 
-		// Обработчик для кнопки
-		playButton.addEventListener("click", () => {
-			if (video.paused) {
-				// Запуск видео
-				video.play();
-				video.setAttribute("controls", ""); // Добавляем атрибут controls
-				playButton.classList.add("playing");
-				elementsToHide.style.display = "none"; // Скрываем элементы
-				video.removeAttribute("poster"); // Убираем постер
-			} else {
-				// Остановка видео
-				video.pause();
-				video.currentTime = 0; // Сброс воспроизведения к началу
-				video.setAttribute("poster", poster); // Восстанавливаем постер
-				video.removeAttribute("controls"); // Убираем атрибут controls
-				playButton.classList.remove("playing");
-				elementsToHide.style.display = ""; // Показываем элементы
-			}
-		});
+            video.addEventListener("canplay", () => {
+                console.log("Видео загружено и готово к воспроизведению");
+            });
 
-		// Обработчик для завершения видео
-		video.addEventListener("ended", () => {
-			video.currentTime = 0; // Сброс к началу
-			video.setAttribute("poster", poster); // Восстанавливаем постер
-			video.removeAttribute("controls"); // Убираем атрибут controls
-			playButton.classList.remove("playing");
-			elementsToHide.style.display = ""; // Показываем элементы
-		});
-	});
+            playButton.addEventListener("click", () => {
+                if (video.paused) {
+                    video.muted = false;
+                    elementsToHide.style.display = "none";
+                    video.removeAttribute("poster");
+                    
+                    requestAnimationFrame(() => {
+                        video.play()
+                            .then(() => {
+                                video.setAttribute("controls", "");
+                                playButton.classList.add("playing");
+                            })
+                            .catch(err => {
+                                console.error("Ошибка воспроизведения:", err);
+                            });
+                    });
+                } else {
+                    video.pause();
+                    video.currentTime = 0;
+                    video.setAttribute("poster", posterSrc);
+                    video.removeAttribute("controls");
+                    playButton.classList.remove("playing");
+                    elementsToHide.style.display = "";
+                }
+            });
+
+            video.addEventListener("ended", () => {
+                video.currentTime = 0;
+                video.setAttribute("poster", posterSrc);
+                video.removeAttribute("controls");
+                playButton.classList.remove("playing");
+                elementsToHide.style.display = "";
+            });
+        } else if (videoSrc) {
+            playButton.addEventListener("click", () => {
+                const iframe = document.createElement("iframe");
+                iframe.src = `${videoSrc}?autoplay=1&rel=0&showinfo=0`;
+                iframe.allow = "autoplay; encrypted-media";
+                iframe.allowFullscreen = true;
+                iframe.frameBorder = "0";
+                iframe.classList.add("video-iframe");
+
+                wrapper.innerHTML = "";
+                wrapper.appendChild(iframe);
+                elementsToHide.style.display = "none";
+            });
+        }
+    });
 });
+
+
 function wrapMenuText(items) {
 	const links = document.querySelectorAll(items);
 
